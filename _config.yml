@@ -1,10 +1,10 @@
-title: Florian Erwerth
-description: Apps, and the documents that have to be true about them.
+title: Graviton
+description: Legal documents for the Graviton iOS app.
 
-# A supported GitHub Pages theme, so there is no Gemfile to keep working and no
-# build of our own to break. The policy has to render for years without anyone
-# touching this repository.
-theme: jekyll-theme-minimal
+# No theme. Every GitHub Pages theme paints a sidebar with the site owner's name
+# and a link back to the repository, and a privacy policy is not a place to
+# advertise where its source lives. The layout in `_layouts/default.html` is
+# ours, has no chrome, and cannot grow any.
 
 # app-ads.txt is a record for a crawler, not a page. Jekyll copies it through
 # untouched as long as it is not treated as content.

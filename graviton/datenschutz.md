@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Graviton — Datenschutzerklärung"
+lang: de
 permalink: /graviton/datenschutz/
 ---
 

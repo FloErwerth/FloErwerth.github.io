@@ -1,19 +1,12 @@
 ---
 layout: default
-title: Florian Erwerth
+title: Graviton
+lang: en
 ---
 
-# Florian Erwerth
+# Graviton
 
-München, Germany. I make small iOS apps.
-
-## Graviton
-
-A spirit level for iOS. Calibrated, honest, and readable without looking at it.
+A spirit level for iOS.
 
 - [Privacy policy](/graviton/privacy/)
 - [Datenschutzerklärung](/graviton/datenschutz/)
-
-## Contact
-
-app.graviton@gmail.com

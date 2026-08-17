@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Graviton — Privacy policy"
+lang: en
 permalink: /graviton/privacy/
 ---
 
