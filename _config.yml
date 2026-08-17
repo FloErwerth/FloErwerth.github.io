@@ -1,0 +1,15 @@
+title: Florian Erwerth
+description: Apps, and the documents that have to be true about them.
+
+# A supported GitHub Pages theme, so there is no Gemfile to keep working and no
+# build of our own to break. The policy has to render for years without anyone
+# touching this repository.
+theme: jekyll-theme-minimal
+
+# app-ads.txt is a record for a crawler, not a page. Jekyll copies it through
+# untouched as long as it is not treated as content.
+include:
+  - app-ads.txt
+
+exclude:
+  - README.md
