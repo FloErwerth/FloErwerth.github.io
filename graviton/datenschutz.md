@@ -37,9 +37,10 @@ Die App nutzt **nicht** Ihren Standort, Ihre Kamera, Ihr Mikrofon, Ihre Kontakte
 
 ## Was die App auf Ihrem Gerät speichert
 
-Eine Sache, und zwar nur auf Ihrem Gerät:
+Zwei Dinge, und zwar nur auf Ihrem Gerät:
 
 - **Sprache** — ob Sie English, Deutsch oder „dem Gerät folgen" gewählt haben.
+- **Wie oft Sie die App geöffnet haben** — eine bloße Zählung. Sie dient allein dazu, den Zeitpunkt für Apples Bitte um eine Sternebewertung zu bestimmen, und wird nirgendwohin gesendet.
 
 Es gibt dafür kein Konto, keine Cloud-Synchronisierung und keine Sicherung durch die App. Googles Einwilligungswerkzeug hält die Antwort, die Sie ihm gegeben haben, getrennt davon fest — so, wie Googles Werkzeuge das tun.
 
@@ -76,7 +77,7 @@ Sonst verlässt nichts Ihr Gerät. Die App hat keinen eigenen Server, an den sie
 
 **Ich bewahre nichts auf, also gibt es bei mir auch keine Frist.**
 
-- **Auf Ihrem Gerät:** Ihre Sprachwahl bleibt, bis Sie die App löschen. Mit der App verschwindet sie.
+- **Auf Ihrem Gerät:** Ihre Sprachwahl und die Zählung der Öffnungen bleiben, bis Sie die App löschen. Mit der App verschwinden sie.
 - **Bei Google:** Wie lange Google aufbewahrt, was seine Werbung erhebt, bestimmt Google und beschreibt es in seiner oben verlinkten Erklärung.
 
 ## Ihre Rechte

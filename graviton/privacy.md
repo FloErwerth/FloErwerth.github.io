@@ -37,9 +37,10 @@ The app does **not** use your location, camera, microphone, contacts, photos, ca
 
 ## What the app stores on your device
 
-One thing, kept on your device only:
+Two things, kept on your device only:
 
 - **Language** — whether you chose English, Deutsch, or to follow the device.
+- **How many times you have opened the app** — a plain count, used only to decide when to show Apple's request for a star rating. It is never sent anywhere.
 
 There is no account, no cloud sync and no backup of it by the app. Google's consent tool separately records the answer you gave it, in the way Google's own tools do.
 
@@ -76,7 +77,7 @@ Nothing else leaves your device. The app has no server of its own to send anythi
 
 **I keep nothing, so there is nothing for me to keep for a length of time.**
 
-- **On your device:** your Language choice stays until you delete the app. Deleting the app removes it.
+- **On your device:** your Language choice and the count of how often you have opened the app stay until you delete the app. Deleting the app removes them.
 - **Google:** how long Google keeps what its advertising collects is set by Google, and is described in Google's own policy linked above.
 
 ## Your rights
