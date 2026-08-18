@@ -7,7 +7,7 @@ permalink: /graviton/datenschutz/
 
 # Datenschutzerklärung
 
-**Zuletzt geändert:** 17. August 2026  
+**Zuletzt geändert:** 18. August 2026  
 **App:** Graviton (iOS)
 
 ## Kurz gesagt
@@ -37,11 +37,9 @@ Die App nutzt **nicht** Ihren Standort, Ihre Kamera, Ihr Mikrofon, Ihre Kontakte
 
 ## Was die App auf Ihrem Gerät speichert
 
-Drei Dinge, und zwar nur auf Ihrem Gerät:
+Eine Sache, und zwar nur auf Ihrem Gerät:
 
-- **Kalibrierung** — die Korrektur, die Ihr Telefon richtig anzeigen lässt, je Lage.
 - **Sprache** — ob Sie English, Deutsch oder „dem Gerät folgen" gewählt haben.
-- **Ob Sie die Einführung gesehen haben.**
 
 Es gibt dafür kein Konto, keine Cloud-Synchronisierung und keine Sicherung durch die App. Googles Einwilligungswerkzeug hält die Antwort, die Sie ihm gegeben haben, getrennt davon fest — so, wie Googles Werkzeuge das tun.
 
@@ -60,13 +58,13 @@ Ich erhalte, sehe und speichere nichts davon. Die App sendet Google nichts über
 
 ### Ihre Wahl
 
-**In der EU und im Vereinigten Königreich** fragt Google Sie einmal — über sein eigenes Einwilligungsformular, auf dem Weg aus der Einführung heraus —, wie Werbung personalisiert werden darf. Ihre Antwort hält Googles Einwilligungswerkzeug fest, und sie ist es, die personalisierte Werbung rechtmäßig macht. Sie können sie jederzeit ändern: **Einstellungen → Datenschutz → Werbeeinstellungen**.
+**In der EU und im Vereinigten Königreich** fragt Google Sie einmal — über sein eigenes Einwilligungsformular, kurz nachdem Sie die App zum ersten Mal öffnen —, wie Werbung personalisiert werden darf. Ihre Antwort hält Googles Einwilligungswerkzeug fest, und sie ist es, die personalisierte Werbung rechtmäßig macht. Sie können sie jederzeit ändern: **Einstellungen → Datenschutz → Werbeeinstellungen**.
 
 **Anderswo** fragt Google nicht, weil es nicht muss. Diese Zeile wird dann in den Einstellungen auch nicht angezeigt, denn es stünde kein Formular dahinter.
 
 So oder so gilt: Erlaubt keine Antwort eine Anzeige, zeigt die App eben keine.
 
-Wenn Sie personalisierte Werbung ablehnen, arbeitet die App genau wie vorher. Am Instrument wird nichts zurückgehalten: volle Genauigkeit, alle drei Lagen, Kalibrierung und Toleranz sind kostenlos und waren es immer.
+Wenn Sie personalisierte Werbung ablehnen, arbeitet die App genau wie vorher. Am Instrument wird nichts zurückgehalten: volle Genauigkeit, alle drei Lagen und jede Messfunktion sind kostenlos und waren es immer.
 
 ## Wohin die Daten gehen
 
@@ -78,7 +76,7 @@ Sonst verlässt nichts Ihr Gerät. Die App hat keinen eigenen Server, an den sie
 
 **Ich bewahre nichts auf, also gibt es bei mir auch keine Frist.**
 
-- **Auf Ihrem Gerät:** Kalibrierung, Sprache und ob Sie die Einführung gesehen haben, bleiben, bis Sie die App löschen. Mit der App verschwinden sie.
+- **Auf Ihrem Gerät:** Ihre Sprachwahl bleibt, bis Sie die App löschen. Mit der App verschwindet sie.
 - **Bei Google:** Wie lange Google aufbewahrt, was seine Werbung erhebt, bestimmt Google und beschreibt es in seiner oben verlinkten Erklärung.
 
 ## Ihre Rechte

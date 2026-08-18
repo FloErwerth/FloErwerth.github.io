@@ -7,7 +7,7 @@ permalink: /graviton/privacy/
 
 # Privacy policy
 
-**Last updated:** 17 August 2026  
+**Last updated:** 18 August 2026  
 **App:** Graviton (iOS)
 
 ## The short version
@@ -37,13 +37,11 @@ The app does **not** use your location, camera, microphone, contacts, photos, ca
 
 ## What the app stores on your device
 
-Three things, kept on your device only:
+One thing, kept on your device only:
 
-- **Calibration** — the correction that makes your phone read true, per Posture.
 - **Language** — whether you chose English, Deutsch, or to follow the device.
-- **Whether you have seen the introduction.**
 
-There is no account, no cloud sync and no backup of these by the app. Google's consent tool separately records the answer you gave it, in the way Google's own tools do.
+There is no account, no cloud sync and no backup of it by the app. Google's consent tool separately records the answer you gave it, in the way Google's own tools do.
 
 ## Advertising
 
@@ -60,13 +58,13 @@ I do not receive, see or store any of that information. The app sends Google not
 
 ### Your choice
 
-**If you are in the EU or the UK**, Google asks you once — through its own consent form, on the way out of the introduction — how advertising may be personalised. Your answer is recorded by Google's consent tool, and it is what makes personalised advertising lawful. You can change it at any time: **Settings → Privacy → Ad privacy choices**.
+**If you are in the EU or the UK**, Google asks you once — through its own consent form, shortly after you first open the app — how advertising may be personalised. Your answer is recorded by Google's consent tool, and it is what makes personalised advertising lawful. You can change it at any time: **Settings → Privacy → Ad privacy choices**.
 
 **Elsewhere**, Google does not ask, because it is not required to. That row is then not shown in Settings, because there would be no form behind it.
 
 Either way, if no answer allows an advertisement, the app simply shows none.
 
-If you refuse personalised advertising, the app still works exactly as before. Nothing in the instrument is withheld: full accuracy, all three Postures, Calibration and Tolerance are free and always have been.
+If you refuse personalised advertising, the app still works exactly as before. Nothing in the instrument is withheld: full accuracy, all three Postures and every measuring feature are free and always have been.
 
 ## Where the data goes
 
@@ -78,7 +76,7 @@ Nothing else leaves your device. The app has no server of its own to send anythi
 
 **I keep nothing, so there is nothing for me to keep for a length of time.**
 
-- **On your device:** Calibration, Language and whether you have seen the introduction stay until you delete the app. Deleting the app removes them.
+- **On your device:** your Language choice stays until you delete the app. Deleting the app removes it.
 - **Google:** how long Google keeps what its advertising collects is set by Google, and is described in Google's own policy linked above.
 
 ## Your rights
