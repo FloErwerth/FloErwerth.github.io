@@ -15,7 +15,7 @@ The files under `graviton/` here are those two, with the repository's internal h
 
 `app-ads.txt` sits at the root, and it has to. Google reads it from the root of the developer website named in the App Store listing, never from a subdirectory — that is why this is a user site and not a project site.
 
-The publisher ID in it is the middle of the AdMob app ID in the app's `app.json`. Change one and change the other, or the file says nothing.
+It has one line per AdMob account, because the apps do not share one: Graviton's and PUBG Stream Report's. Each publisher ID is the middle of the AdMob app ID in that app's `app.json`. Change one and change the other, or the file says nothing.
 
 ## Publishing
 
