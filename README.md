@@ -1,6 +1,6 @@
 # awesomeapps.fun
 
-Every app, its updates, and the documents that have to be true. To be served at <https://awesomeapps.fun>.
+Every app, its updates, and the documents that have to be true, served at <https://awesomeapps.fun> from the user site `FloErwerth/FloErwerth.github.io`.
 
 ## Adding an app or an update
 
@@ -22,9 +22,9 @@ A privacy policy is written in the app's own repository, in both languages:
 - `docs/legal/privacy-policy.md`
 - `docs/legal/privacy-policy.de.md`
 
-The files under `graviton/` here are those two, with the repository's internal header stripped and Jekyll front matter added. **Edit the source, then republish.** A change made only here is a policy that no longer describes the app it is about, which is the one kind of wrong that is a legal problem rather than a bug report. See ADR-0021 in the app repository.
+A policy published here is those two files, with the repository's internal header stripped and Jekyll front matter added, under `<slug>/privacy.md` and `<slug>/datenschutz.md`. **Edit the source, then republish.** A change made only here is a policy that no longer describes the app it is about, which is the one kind of wrong that is a legal problem rather than a bug report.
 
-They use `_layouts/default.html`, which has no chrome but the Impressum link the law asks for. Everything else uses `_layouts/site.html`.
+A policy uses `_layouts/default.html`, which has no chrome but the Impressum link the law asks for. Everything else uses `_layouts/site.html`.
 
 ## app-ads.txt
 

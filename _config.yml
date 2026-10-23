@@ -33,6 +33,7 @@ exclude:
   - Gemfile.lock
   - vendor
   - .bundle
+  - scripts
 
 defaults:
   - scope:
