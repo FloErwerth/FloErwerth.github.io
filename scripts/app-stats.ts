@@ -11,12 +11,38 @@
 // commit once.
 //
 //   bun scripts/app-stats.ts
+//
+// With --publish it also commits _data/stats.yml and pushes it, so the site
+// stays current on its own. A Stop hook in ~/.claude/settings.json runs it
+// that way after each Claude reply; it then does the work at most every 15
+// minutes, and only on main.
+//
+//   bun scripts/app-stats.ts --publish
 
-import { readdir, readFile, writeFile } from "node:fs/promises";
+import { readdir, readFile, stat, writeFile } from "node:fs/promises";
 import { homedir } from "node:os";
 import { join } from "node:path";
 
 const development = join(homedir(), "development");
+const site = join(import.meta.dir, "..");
+const publish = process.argv.includes("--publish");
+const message = "Update the Claude tokens and commits";
+
+function git(...args: string[]) {
+  const run = Bun.spawnSync(["git", "-C", site, ...args]);
+  return { ok: run.exitCode === 0, out: run.stdout.toString().trim() };
+}
+
+if (publish) {
+  // The time of the last run, which also keeps two sessions from running
+  // this at once.
+  const stamp = join(site, ".git", "app-stats-published");
+  const last = await stat(stamp).then((s) => s.mtimeMs).catch(() => 0);
+  if (Date.now() - last < 15 * 60_000) process.exit(0);
+  // A branch, a rebase or a merge in progress is work of its own: leave it.
+  if (git("symbolic-ref", "--short", "-q", "HEAD").out !== "main") process.exit(0);
+  await writeFile(stamp, "");
+}
 
 // Per app: the folders its sessions ran in, and its repositories.
 const apps: Record<string, { folders: RegExp[]; repos: string[] }> = {
@@ -38,7 +64,7 @@ const apps: Record<string, { folders: RegExp[]; repos: string[] }> = {
   },
 };
 
-const out = join(import.meta.dir, "..", "_data", "stats.yml");
+const out = join(site, "_data", "stats.yml");
 const slugs = Object.keys(apps);
 
 async function* logs(dir: string): AsyncGenerator<string> {
@@ -129,5 +155,19 @@ const yml = [
   "",
 ].join("\n");
 
-await writeFile(out, yml);
+// A new day alone is no news: "Stand" on the page is the day the numbers
+// last changed.
+const withoutDate = (text: string) => text.replace(/^updated: .*$/m, "");
+if (withoutDate(yml) !== withoutDate(before)) await writeFile(out, yml);
 console.log(yml);
+
+if (publish) {
+  if (git("status", "--porcelain", "--", "_data/stats.yml").out) {
+    git("commit", "-q", "-m", message, "--", "_data/stats.yml");
+  }
+  // Push only commits of this script, never work that is not pushed yet.
+  const ahead = git("log", "origin/main..HEAD", "--format=%s").out;
+  if (ahead && ahead.split("\n").every((subject) => subject === message)) {
+    git("push", "-q", "origin", "main");
+  }
+}
