@@ -612,6 +612,10 @@ dd {
   min-height: 0;
 }
 
+.bento-key {
+  --sheet: var(--pink);
+}
+
 @media (max-width: 52rem) {
   .bento {
     grid-template-columns: 1fr;
@@ -619,6 +623,110 @@ dd {
 
   .bento .hatch {
     display: none;
+  }
+}
+
+/* Claude tokens and commits: the totals big, then each app on its own cell. */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.stats {
+  --sheet: var(--butter);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stats-note {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.stats-total {
+  grid-column: span 3;
+  padding-top: calc(var(--pad) * 2);
+  padding-bottom: calc(var(--pad) * 2);
+}
+
+.stats-figures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem clamp(2rem, 6vw, 5rem);
+}
+
+.stats-figure {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  line-height: 1;
+}
+
+.stats-number {
+  display: block;
+  margin-bottom: 0.12em;
+  font-weight: 900;
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.85;
+  font-variant-numeric: tabular-nums;
+}
+
+.stats-text {
+  max-width: 40rem;
+  margin-top: 1.25rem;
+}
+
+.stats-app {
+  --sheet: var(--white);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  text-decoration: none;
+}
+
+.stats-app:hover .stats-app-name {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.stats-app-name,
+.stats-app-commits {
+  font-family: var(--small);
+  font-size: 0.875rem;
+}
+
+.stats-app-number,
+.stats-app-commits {
+  grid-column: 1 / -1;
+}
+
+.stats-app-number {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 52rem) {
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stats-note {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
+
+  .stats-total {
+    grid-column: 1 / -1;
   }
 }
 
@@ -790,6 +898,10 @@ dd {
   max-width: 38rem;
 }
 
+.app-fact-wide {
+  grid-column: span 2;
+}
+
 .app-fact {
   min-height: 8rem;
 }
@@ -830,8 +942,13 @@ dd {
     grid-template-columns: 1fr;
   }
 
-  .app-about {
+  .app-about,
+  .app-fact-wide {
     grid-column: auto;
+  }
+
+  .app-sheet .hatch {
+    display: none;
   }
 }
 

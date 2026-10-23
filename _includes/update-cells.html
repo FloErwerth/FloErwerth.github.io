@@ -1,12 +1,37 @@
 {%- comment -%}
   Updates as a block of cells, after the awards block on wodniack.dev. Cells
   left over at the end of the last row are hatched, so the block stays whole.
+
+  With key_steps=true the block also shows each app's key milestones (the
+  steps into a store, `key: true` in _data/apps.yml), newest first among the
+  posts. Liquid cannot sort posts and milestones together, so each entry is a
+  string "date|kind|where" that sorts by its date.
 {%- endcomment -%}
 {%- assign limit = include.limit | default: 1000 -%}
+{%- assign entries = "" | split: "" -%}
+{%- for post in include.posts %}
+{%- assign entry = post.date | date: "%Y-%m-%d" | append: "|p|" | append: forloop.index0 %}
+{%- assign entries = entries | push: entry %}
+{%- endfor %}
+{%- if include.key_steps %}
+{%- for app in site.data.apps %}
+{%- for m in app.milestones %}
+{%- if m.key %}
+{%- assign entry = m.date | date: "%Y-%m-%d" | append: "|m|" | append: app.slug | append: "|" | append: forloop.index0 %}
+{%- assign entries = entries | push: entry %}
+{%- endif %}
+{%- endfor %}
+{%- endfor %}
+{%- endif %}
+{%- assign entries = entries | sort | reverse %}
 {%- assign shown = 0 -%}
 <ol class="cells bento">
-  {%- for post in include.posts limit: limit %}
+  {%- for entry in entries limit: limit %}
   {%- assign shown = shown | plus: 1 %}
+  {%- assign part = entry | split: "|" %}
+  {%- if part[1] == "p" %}
+  {%- assign i = part[2] | plus: 0 %}
+  {%- assign post = include.posts[i] %}
   <li class="cell bento-cell">
     <span class="cross" aria-hidden="true"></span>
     <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d.%-m.%Y" }}</time>
@@ -20,6 +45,17 @@
     </span>
     {%- endif %}
   </li>
+  {%- else %}
+  {%- assign app = site.data.apps | where: "slug", part[2] | first %}
+  {%- assign i = part[3] | plus: 0 %}
+  {%- assign m = app.milestones[i] %}
+  <li class="cell bento-cell bento-key">
+    <span class="cross" aria-hidden="true"></span>
+    <time datetime="{{ m.date | date: '%Y-%m-%d' }}">{{ m.date | date: "%-d.%-m.%Y" }}</time>
+    <a class="bento-title" href="{{ '/' | append: app.slug | append: '/#timeline-title' | relative_url }}">{{ m.title }}</a>
+    <span class="bento-apps">{{ app.name }}</span>
+  </li>
+  {%- endif %}
   {%- endfor %}
   {%- if shown == 0 %}
   <li class="cell bento-cell bento-empty">Noch keine Updates.</li>

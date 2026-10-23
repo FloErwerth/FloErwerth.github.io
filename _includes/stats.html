@@ -1,0 +1,29 @@
+{%- comment -%}
+  How many Claude tokens and commits the apps took so far, from
+  _data/stats.yml. That file is written by scripts/app-stats.ts, so run it to
+  bring this up to date.
+{%- endcomment -%}
+{%- assign stats = site.data.stats %}
+<section class="cells stats" aria-labelledby="stats-title">
+  <h2 id="stats-title" class="visually-hidden">Wie viel Arbeit in den Apps steckt</h2>
+  <div class="cell stats-note">
+    <p class="annotation">( Mit Claude gebaut )</p>
+    <p class="annotation">Stand: {{ stats.updated | date: "%-d.%-m.%Y" }}</p>
+  </div>
+  <div class="cell stats-total">
+    <div class="stats-figures">
+      <p class="stats-figure"><span class="stats-number">{{ stats.tokens_label }}</span> Claude-Tokens</p>
+      <p class="stats-figure"><span class="stats-number">{{ stats.commits_label }}</span> Commits</p>
+    </div>
+    <p class="stats-text">So viel Text hat Claude für diese Apps bisher gelesen und geschrieben. Ein Token ist ein kleines Stück Text, oft nur eine Silbe. Ein Commit ist ein gespeicherter Schritt im Code.</p>
+  </div>
+  {%- for app in site.data.apps %}
+  {%- assign s = stats.apps[app.slug] %}
+  <a class="cell stats-app" href="{{ '/' | append: app.slug | append: '/' | relative_url }}">
+    {% include app-icon.html app=app class="icon-small" %}
+    <span class="stats-app-name">{{ app.name }}</span>
+    <span class="stats-app-number">{{ s.tokens_label | default: "0 Mio." }}</span>
+    <span class="stats-app-commits">{{ s.commits_label | default: "0" }} Commits</span>
+  </a>
+  {%- endfor %}
+</section>

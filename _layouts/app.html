@@ -22,7 +22,14 @@ layout: site
     </div>
     <dl class="cell app-fact"><dt>Für</dt><dd>{{ app.platforms | join: " und " }}</dd></dl>
     <dl class="cell app-fact"><dt>Stand</dt><dd>{% include status.html status=app.status %}</dd></dl>
+    {%- assign stats = site.data.stats.apps[app.slug] %}
+    {%- if stats %}
+    <dl class="cell app-fact"><dt>Claude-Tokens bisher</dt><dd>{{ stats.tokens_label }}</dd></dl>
+    <dl class="cell app-fact"><dt>Commits bisher</dt><dd>{{ stats.commits_label }}</dd></dl>
+    <div class="cell app-fact hatch app-fact-wide" aria-hidden="true"></div>
+    {%- else %}
     <div class="cell app-fact hatch" aria-hidden="true"></div>
+    {%- endif %}
     {%- if app.store.ios %}
     <a class="cell app-store" href="{{ app.store.ios }}">Im App Store laden</a>
     {%- endif %}

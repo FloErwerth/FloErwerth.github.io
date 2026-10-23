@@ -16,10 +16,12 @@ toy: true
 
 {% include ring.html %}
 
+{% include stats.html %}
+
 <section class="board" aria-labelledby="updates-title">
   <div class="cells board-head">
     <h2 id="updates-title" class="cell board-title">Updates</h2>
     <a class="cell board-all" href="{{ '/updates/' | relative_url }}">Alle Updates</a>
   </div>
-  {% include update-cells.html posts=site.posts limit=6 %}
+  {% include update-cells.html posts=site.posts key_steps=true limit=6 %}
 </section>
