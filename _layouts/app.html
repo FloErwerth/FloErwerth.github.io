@@ -94,9 +94,6 @@ layout: site
       <li class="cells timeline-step{% if m.key %} is-key{% endif %}">
         <time class="cell timeline-date" datetime="{{ m.date | date: '%Y-%m-%d' }}">{{ m.date | date: "%-d.%-m.%Y" }}</time>
         <div class="cell timeline-body">
-          {%- if m.key %}
-          <p class="timeline-key">Wichtiger Schritt</p>
-          {%- endif %}
           <h3 class="timeline-title">{{ m.title }}</h3>
           <p>{{ m.text }}</p>
         </div>

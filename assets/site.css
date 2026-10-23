@@ -1291,18 +1291,6 @@ dd {
   font-size: clamp(2rem, 4vw, 3.25rem);
 }
 
-.timeline-key {
-  align-self: flex-start;
-  margin: 0 0 0.35rem;
-  padding: 0.3rem 0.8rem;
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  background: var(--butter);
-  box-shadow: var(--shadow);
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
 @media (max-width: 40rem) {
   .timeline-step {
     grid-template-columns: 1fr;
