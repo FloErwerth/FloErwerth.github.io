@@ -1,0 +1,93 @@
+---
+layout: site
+title: Über mich
+description: Florian Erwerth baut Apps mit React Native und Expo. Sein Weg von der Ausbildung bis zu einer App mit rund 130.000 Nutzern im Monat.
+---
+{%- comment -%}
+  Who builds the apps. The career is the one in the CV, told from the side of
+  React Native: the steps that led there, oldest first, like an app's updates.
+{%- endcomment -%}
+<article class="about-page" style="--app: var(--lilac)">
+  <header class="hero hero-app">
+    {% include tunnel.svg %}
+    <div class="hero-app-icon">
+      <span class="cross" aria-hidden="true"></span>
+      <img class="portrait" src="{{ '/assets/florian.webp' | relative_url }}" alt="Florian Erwerth lacht in die Kamera. Er trägt eine runde Brille und ein schwarzes T-Shirt." width="264" height="330" />
+    </div>
+    <h1 class="giant giant-app">Florian Erwerth</h1>
+  </header>
+
+  <div class="cells app-sheet">
+    <p class="cell annotation">( Wer die Apps baut )</p>
+    <div class="cell app-about">
+      <p class="statement-text">Ich baue Apps mit React Native und Expo, von der ersten Zeile bis in den Store.</p>
+      <p>Seit über vier Jahren arbeite ich als Entwickler für Mobile und Frontend, davor war ich drei Jahre in der Ausbildung zum Fachinformatiker. Zuletzt habe ich eine App mit rund 130.000 Nutzern im Monat mit aufgebaut. Ich arbeite eng mit Design, Produkt und Backend zusammen, gern auch remote.</p>
+      <p>Abends baue ich meine eigenen Apps. <a href="{{ '/#apps' | relative_url }}">Sie stehen alle hier.</a></p>
+    </div>
+    <dl class="cell app-fact"><dt>Beruf</dt><dd>App-Entwickler</dd></dl>
+    <dl class="cell app-fact"><dt>Am liebsten mit</dt><dd>React Native und Expo</dd></dl>
+    <dl class="cell app-fact"><dt>Wo</dt><dd>München</dd></dl>
+  </div>
+
+  <section class="timeline" aria-labelledby="career-title">
+    <div class="cells">
+      <h2 id="career-title" class="cell board-title">Werdegang</h2>
+    </div>
+    <ol class="timeline-list">
+      <li class="cells timeline-step">
+        <p class="cell timeline-date">2019–2022</p>
+        <div class="cell timeline-body">
+          <h3 class="timeline-title">Ausbildung bei T-Systems Multimedia Solutions</h3>
+          <p>Fachinformatiker für Anwendungsentwicklung, IHK-Note 1,9. Ich baue Prototypen für VR und für die AR-Brille Nreal, zum Beispiel eine virtuelle Wohnungsbesichtigung. Meine Abschlussarbeit ist ein SDK für solche Prototypen in VR.</p>
+        </div>
+      </li>
+      <li class="cells timeline-step">
+        <p class="cell timeline-date">2022</p>
+        <div class="cell timeline-body">
+          <h3 class="timeline-title">Die erste eigene App: Pure Weight</h3>
+          <p>Ein Fitness-Tracker mit Expo: Workouts, Fortschritt und Diagramme. Eine Pro-Version gibt es per In-App-Kauf über RevenueCat. Ich bringe die App selbst in den Apple App Store.</p>
+        </div>
+      </li>
+      <li class="cells timeline-step">
+        <p class="cell timeline-date">2022–2024</p>
+        <div class="cell timeline-body">
+          <h3 class="timeline-title">Web-Entwickler bei Check24</h3>
+          <p>React und TypeScript in einem großen Team. Ich baue neue Features mit Produkt, Qualitätssicherung und Backend. Ich pflege die Komponenten-Library, die die ganze Firma nutzt, und teile einen großen Monolithen in kleinere Projekte auf.</p>
+        </div>
+      </li>
+      <li class="cells timeline-step">
+        <p class="cell timeline-date">2024–2026</p>
+        <div class="cell timeline-body">
+          <h3 class="timeline-title">MetaFlow von Grund auf, bei Ambient Digital</h3>
+          <p>Ich baue die App MetaFlow mit Expo auf, ab der ersten Zeile. Dazu gehören der Login mit Shopify, das Onboarding und die Gamification. Daten kommen über TanStack Query, der State liegt in MobX und Jotai, die Texte gibt es in mehreren Sprachen. Builds und Releases laufen über GitLab CI und EAS.</p>
+        </div>
+      </li>
+      <li class="cells timeline-step">
+        <p class="cell timeline-date">Seit 2026</p>
+        <div class="cell timeline-body">
+          <h3 class="timeline-title">App-Entwickler bei MetaFlow</h3>
+          <p>Jetzt arbeite ich direkt im Produktteam von MetaFlow. Die App läuft auf iOS und Android, mit rund 130.000 Nutzern im Monat. Ich baue neue Features von der Planung bis zum Release, ein Designsystem zusammen mit dem Design und halte die App fit für neue Versionen von iOS, Android und Expo.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="skills-board" aria-labelledby="skills-title">
+    <div class="cells">
+      <h2 id="skills-title" class="cell board-title">Werkzeuge</h2>
+    </div>
+    <div class="cells skills">
+      <dl class="cell skill"><dt>Mobile</dt><dd>React Native, Expo mit EAS Build, Submit und Update, Expo Router, Reanimated, Skia, Releases für iOS und Android</dd></dl>
+      <dl class="cell skill"><dt>Frontend</dt><dd>TypeScript, React, HTML, SCSS, Designsysteme</dd></dl>
+      <dl class="cell skill"><dt>Daten und State</dt><dd>TanStack Query, MobX, Jotai, REST-APIs, Shopify-APIs, RevenueCat</dd></dl>
+      <dl class="cell skill"><dt>Backend</dt><dd>Supabase mit Postgres und Realtime, Node.js, Express, Socket.io, Grundlagen in Python</dd></dl>
+      <dl class="cell skill"><dt>Im Team</dt><dd>Git, GitLab CI, Jira, Notion, Figma, Claude Code</dd></dl>
+      <dl class="cell skill"><dt>Abseits vom Code</dt><dd>Krafttraining, Laufen, Gravel-Biken und Wandern. Daher kommen MoveNote und Grammgenau.</dd></dl>
+    </div>
+  </section>
+
+  <div class="cells statement about-contact">
+    <p class="cell annotation">( Schreib mir )</p>
+    <p class="cell statement-text"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+  </div>
+</article>

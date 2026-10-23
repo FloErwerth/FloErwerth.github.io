@@ -9,6 +9,10 @@ Every app, its updates, and the documents that have to be true. To be served at 
 - "Updates zu <App>" on an app page is the `milestones` list of that entry (`date`, `title`, `text`, oldest first), followed by the posts that name the app. Take the milestones from the app's commit history on its main branch, one per step a user would notice.
 - An update is a post: `_posts/YYYY-MM-DD-title.md` with `title:` and `apps: [<slug>, …]`. It shows on the home page, on each named app's page, in `/updates/` and in `/feed.xml`.
 
+## About me
+
+`ueber-mich/index.html` is the career from the CV, told from the side of React Native. The photo is `assets/florian.webp`. The phone number and the street stay off this page: the Impressum carries the address, the page carries only the e-mail.
+
 ## Privacy policies are not written here
 
 A privacy policy is written in the app's own repository, in both languages:

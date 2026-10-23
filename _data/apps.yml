@@ -9,6 +9,9 @@
 #         `media` (screenshots and screen recordings from the app) or a `demo`
 #         (a drawing in _includes/how/, for an app with no recordings yet).
 #         Describe only what the app does today, not what is planned.
+# milestones: the app's history, oldest first. `key: true` marks a step on
+#         the way into a store (a test track, a submission, a release), which
+#         the page shows larger than the others.
 
 - slug: plopp
   name: PLOPP
@@ -320,9 +323,11 @@
         für App Store und Google Play sind fertig.
     - date: 2026-10-12
       title: Geschlossener Test bei Google Play
+      key: true
       text: >-
-        Die ersten Tester laden die App über Google Play. Ihre Rückmeldungen
-        bestimmen die nächsten Schritte.
+        Die App ist im geschlossenen Test bei Google Play. Die ersten Tester
+        laden sie aus dem Play Store, und ihre Rückmeldungen bestimmen die
+        nächsten Schritte.
     - date: 2026-10-14
       title: Treffer teilen
       text: >-
@@ -340,7 +345,8 @@
         Nach den ersten Rückmeldungen gibt es einen Willkommens-Bildschirm,
         „Feedback senden“ und mehr Rückmeldung beim Tippen.
     - date: 2026-10-22
-      title: Version 1.1 eingereicht
+      title: Bei Apple eingereicht
+      key: true
       text: >-
-        Version 1.1.0 ist bei Google Play eingereicht. Die Tester bekommen sie,
-        sobald Google sie freigibt.
+        Version 1.1.0 liegt bei Apple zur Prüfung. Gibt Apple sie frei, kommt
+        die App auch aufs iPhone.

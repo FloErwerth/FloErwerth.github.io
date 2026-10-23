@@ -24,6 +24,7 @@
       <nav class="cell masthead-nav" aria-label="Hauptmenü">
         <a href="{{ '/#apps' | relative_url }}">Apps</a>
         <a href="{{ '/updates/' | relative_url }}">Updates</a>
+        <a href="{{ '/ueber-mich/' | relative_url }}">Über mich</a>
       </nav>
       <p class="cell masthead-note">{{ site.data.apps.size }} Apps.<br />Gebaut in München.</p>
     </header>
@@ -37,7 +38,7 @@
       <a class="cell" href="{{ '/impressum/' | relative_url }}">Impressum</a>
       <a class="cell" href="{{ '/datenschutz/' | relative_url }}">Datenschutz</a>
       <a class="cell" href="{{ '/feed.xml' | relative_url }}">Feed abonnieren</a>
-      <p class="cell colophon-note">Gemacht von {{ site.author }}</p>
+      <p class="cell colophon-note">Gemacht von <a href="{{ '/ueber-mich/' | relative_url }}">{{ site.author }}</a></p>
     </footer>
     {%- if page.toy %}
     <script src="{{ '/assets/ring.js' | relative_url }}" defer></script>
