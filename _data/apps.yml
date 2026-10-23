@@ -111,27 +111,38 @@
   store: {}
   legal: {}
   how:
-    - title: Erst die Basis
+    - title: Berechnung der Kalorien
       text: >-
-        Du gibst Gewicht, Größe, Geburtsdatum und Geschlecht ein, dazu deinen
-        Alltag und wie viel Sport du machst. Daraus rechnet die App deinen
-        Ruheumsatz mit einer Formel für Sportler. Dann wählst du: abnehmen,
-        halten oder aufbauen.
-      demo: grammgenau-basis
-    - title: Essen in Gramm
+        Erst mal ein paar Fragen zu dir: Wie schwer und wie groß bist du, wie
+        alt, Mann oder Frau? Wie viel bewegst du dich im Alltag, und wie viel
+        Sport machst du? Dann noch: abnehmen, halten oder aufbauen? Daraus
+        rechnet Grammgenau dein Tagesziel aus, mit einer Formel, die für
+        Sportler gemacht ist.
+      media:
+        - image: /assets/apps/grammgenau/heute.webp
+          alt: "„Heute“ mit dem Tagesziel von 2.800 kcal: 1.791 kcal sind noch offen, darunter Kohlenhydrate, Eiweiß und Fett in Gramm."
+    - title: Essen eintragen
       text: >-
-        Du suchst ein Lebensmittel und trägst ein, wie viele Gramm du gegessen
-        hast. Die App kennt den Bundeslebensmittelschlüssel und viele
-        Markenprodukte, auch über den Barcode. Die Suche versteht Tippfehler
-        und Umlaute. „Heute“ zeigt dir, wie viele Kalorien noch offen sind.
-      demo: grammgenau-essen
-    - title: "Einmal pro Woche: Passt dein Ziel?"
+        Such einfach, was du gegessen hast, und gib die Gramm ein. Die App
+        kennt den Bundeslebensmittelschlüssel und viele Markenprodukte. Die
+        findest du auch über den Barcode. Automatische Rechtschreibprüfung
+        inklusive. Auf „Heute“ siehst du dann, wie viel noch geht.
+      media:
+        - image: /assets/apps/grammgenau/suche.webp
+          alt: "Die Suche nach „Kaese“ findet Gouda, Feta, Emmentaler und Mozzarella, jeweils mit kcal pro 100 g."
+        - image: /assets/apps/grammgenau/menge.webp
+          alt: "80 g Haferflocken ergeben 278 kcal. Darunter die Wahl der Mahlzeit und der Knopf „In Frühstück eintragen“."
+    - title: Passt dein Ziel?
       text: >-
-        Du sagst, ob du abnimmst, zunimmst oder ob es passt. Die App vergleicht
-        das mit dem Trend deiner Wiegungen und mit dem, was du gegessen hast.
-        Daraus rechnet sie deinen echten Bedarf und schlägt ein neues Ziel vor.
-        Je mehr Wochen du antwortest, desto genauer wird es.
-      demo: grammgenau-woche
+        Einmal die Woche fragt dich die App: Nimmst du ab, nimmst du zu, oder
+        passt alles? Das vergleicht sie mit deinen Wiegungen und mit dem, was
+        du gegessen hast. So merkt sie, was du wirklich brauchst, und schlägt
+        dir ein neues Ziel vor. Je öfter du antwortest, desto genauer wird's.
+      media:
+        - image: /assets/apps/grammgenau/ziel.webp
+          alt: "„Passt dein Ziel?“ mit den Antworten „Ich nehme ab“, „Ich nehme zu“ und „Passt“."
+        - image: /assets/apps/grammgenau/ziel-neu.webp
+          alt: "Nach „Ich nehme ab“: 1,1 kg weniger in 2 Wochen, aus dem Trend der Wiegungen. Das neue Ziel ist 3.120 kcal, 320 kcal mehr."
 
   milestones:
     - date: 2026-10-16
