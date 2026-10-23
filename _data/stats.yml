@@ -1,12 +1,12 @@
 # Written by scripts/app-stats.ts. Run it again rather than editing this.
 updated: 2026-10-23
-tokens: 3644129615
+tokens: 3644811710
 tokens_label: "3,6 Mrd."
 commits: 1743
 commits_label: "1.743"
 apps:
   plopp:
-    tokens: 729677631
+    tokens: 730359726
     tokens_label: "730 Mio."
     commits: 178
     commits_label: "178"
