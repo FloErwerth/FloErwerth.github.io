@@ -318,6 +318,11 @@
       text: >-
         Die App gibt es jetzt auch auf Englisch. Icon, Screenshots und Texte
         für App Store und Google Play sind fertig.
+    - date: 2026-10-12
+      title: Geschlossener Test bei Google Play
+      text: >-
+        Die ersten Tester laden die App über Google Play. Ihre Rückmeldungen
+        bestimmen die nächsten Schritte.
     - date: 2026-10-14
       title: Treffer teilen
       text: >-
@@ -335,6 +340,7 @@
         Nach den ersten Rückmeldungen gibt es einen Willkommens-Bildschirm,
         „Feedback senden“ und mehr Rückmeldung beim Tippen.
     - date: 2026-10-22
-      title: Version 1.1 im Test
+      title: Version 1.1 eingereicht
       text: >-
-        Die Tester bekommen Version 1.1.0 über TestFlight und Google Play.
+        Version 1.1.0 ist bei Google Play eingereicht. Die Tester bekommen sie,
+        sobald Google sie freigibt.
