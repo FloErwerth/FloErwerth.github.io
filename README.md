@@ -6,8 +6,8 @@ Every app, its updates, and the documents that have to be true. To be served at 
 
 - An app is one entry in `_data/apps.yml` and a three-line `<slug>/index.md`. Its icon goes to `assets/icons/<slug>.webp` (256 px).
 - "So funktioniert's" on an app page is the `how` list of that entry. Screenshots and screen recordings go to `assets/apps/<slug>/`: 540 px wide WebP, and MP4 (H.264, no sound, a few MB at most) with a WebP poster. An app with no recordings yet gets a drawing in `_includes/how/`, which the page labels "Skizze".
-- "Updates zu <App>" on an app page is the `milestones` list of that entry (`date`, `title`, `text`, oldest first), followed by the posts that name the app. Take the milestones from the app's commit history on its main branch, one per step a user would notice.
-- A milestone with `key: true` is a step into a store (a test track, a submission, a release). The app page shows it larger, and the home page and `/updates/` list it among the posts.
+- "Updates zu <App>" on an app page is the `milestones` list of that entry, oldest first, followed by the posts that name the app. Take the milestones from the app’s commit history on its main branch. One milestone is a period of at least a day (`date`, and `until` for several days), with a `title` for the period and one entry in `points` per change a user would notice. Several commits on the same day are one milestone, never one each.
+- A milestone with `key: true` is a step into a store (a test track, a submission, a release): one day, with a `text` instead of `points`. The app page shows it larger, and the home page and `/updates/` list it among the posts.
 - The Claude tokens and commits on the home page and the app pages come from `_data/stats.yml`. Run `bun scripts/app-stats.ts` to count them again; it reads `~/.claude/projects` and the app repositories under `~/development`, so it only works on this machine.
 - An update is a post: `_posts/YYYY-MM-DD-title.md` with `title:` and `apps: [<slug>, …]`. It shows on the home page, on each named app's page, in `/updates/` and in `/feed.xml`.
 

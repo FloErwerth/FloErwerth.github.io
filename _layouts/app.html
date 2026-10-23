@@ -99,10 +99,27 @@ layout: site
     <ol class="timeline-list">
       {%- for m in app.milestones %}
       <li class="cells timeline-step{% if m.key %} is-key{% endif %}">
+        {%- if m.until %}
+        {%- comment %} A period: "20.–21.10.2026", or "29.9.–2.10.2026" across a month. {% endcomment %}
+        {%- assign from_month = m.date | date: "%m%Y" %}
+        {%- assign until_month = m.until | date: "%m%Y" %}
+        {%- if from_month == until_month %}{% assign from = m.date | date: "%-d." %}{% else %}{% assign from = m.date | date: "%-d.%-m." %}{% endif %}
+        <p class="cell timeline-date"><time datetime="{{ m.date | date: '%Y-%m-%d' }}">{{ from }}</time>–<wbr><time datetime="{{ m.until | date: '%Y-%m-%d' }}">{{ m.until | date: "%-d.%-m.%Y" }}</time></p>
+        {%- else %}
         <time class="cell timeline-date" datetime="{{ m.date | date: '%Y-%m-%d' }}">{{ m.date | date: "%-d.%-m.%Y" }}</time>
+        {%- endif %}
         <div class="cell timeline-body">
           <h3 class="timeline-title">{{ m.title }}</h3>
+          {%- if m.text %}
           <p>{{ m.text }}</p>
+          {%- endif %}
+          {%- if m.points %}
+          <ul class="timeline-points">
+            {%- for point in m.points %}
+            <li>{{ point }}</li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
         </div>
       </li>
       {%- endfor %}

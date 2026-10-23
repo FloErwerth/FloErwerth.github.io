@@ -9,9 +9,11 @@
 #         `media` (screenshots and screen recordings from the app) or a `demo`
 #         (a drawing in _includes/how/, for an app with no recordings yet).
 #         Describe only what the app does today, not what is planned.
-# milestones: the app's history, oldest first. `key: true` marks a step on
-#         the way into a store (a test track, a submission, a release), which
-#         the page shows larger than the others.
+# milestones: the app's history, oldest first, one entry per period of at
+#         least a day: `date`, and `until` for a period of several days, a
+#         `title` for the whole period and its changes as `points`. `key: true`
+#         marks a step on the way into a store (a test track, a submission, a
+#         release): a single day with a `text`, which the page shows larger.
 
 - slug: plopp
   name: PLOPP
@@ -73,47 +75,27 @@
 
   milestones:
     - date: 2026-10-20
-      title: Aus dem Browser aufs Handy
-      text: >-
-        Das Spiel lief zuerst als Prototyp im Browser. Jetzt läuft es als echte
-        App, mit Plopp-Tönen, Vibration und dem violetten Sticker-Look.
-    - date: 2026-10-21
-      title: Runden gegen die Uhr
-      text: >-
-        Eine Runde ist jetzt ein Blatt in 20 Sekunden, mit Sternen, Shop und
-        reifen Blasen. Dazu kommen die Helfer Blitz, Walze, Katze und Regen.
-    - date: 2026-10-21
-      title: Prestige und Talentbäume
-      text: >-
-        Das Spiel bekommt sein Ziel: neu anfangen, Punkte sammeln und sechs
-        Bäume mit Brücken dazwischen ausbauen. Am Ende wartet ein Endlosmodus.
+      until: 2026-10-21
+      title: Vom Browser zum Spiel
+      points:
+        - Das Spiel läuft als echte App, nicht mehr nur im Browser. Es hat Plopp-Töne, Vibration und den violetten Sticker-Look.
+        - Eine Runde ist ein Blatt in 20 Sekunden, mit Sternen, Shop und reifen Blasen.
+        - Die Helfer Blitz, Walze, Katze und Regen ploppen mit.
+        - Prestige gibt dem Spiel ein Ziel. Du fängst neu an und baust sechs Talentbäume aus. Am Ende wartet ein Endlosmodus.
     - date: 2026-10-22
       title: Das Spielgefühl
-      text: >-
-        Blasen wabbeln und ploppen mit Wucht, Münzen fliegen zum Zähler, und
-        alle Töne klingen in einer Tonart. Das Spiel pausiert beim App-Wechsel,
-        und eine Hand zeigt neuen Spielern das Rubbeln.
+      points:
+        - Blasen wabbeln und ploppen mit Wucht. Münzen fliegen zum Zähler.
+        - Alle Töne klingen in einer Tonart.
+        - Das Spiel pausiert, wenn du die App wechselst.
+        - Eine Hand zeigt neuen Spielern das Rubbeln.
     - date: 2026-10-23
-      title: Musik und Intro
-      text: >-
-        Musik läuft unter jedem Bildschirm, mit eigenem Regler. Beim Start
-        füllt sich die Folie im Takt, und PLOPP landet Buchstabe für Buchstabe.
-    - date: 2026-10-23
-      title: Freiwillige Werbung und Premium
-      text: >-
-        Für ein Video gibt es einen Bonus, mit Premium ohne Video. Dazu kommen
-        Farbthemen und Sounds, die man vorher ansehen und anhören kann.
-    - date: 2026-10-23
-      title: Klarere Namen
-      text: >-
-        Aus Rolle wird Level, aus Meisterfolie Meisterrunde und aus
-        Skillbäumen Talente. Große Schritte wie ein neues Level oder Prestige
-        bekommen eine eigene Show.
-    - date: 2026-10-23
-      title: Die Hand im Intro
-      text: >-
-        Im Intro ploppt eine Hand die ersten Blasen weg, bis es zu viele
-        werden. Die Hand ist jetzt ein Cartoon-Handschuh.
+      title: Musik, Intro und Premium
+      points:
+        - Musik läuft unter jedem Bildschirm, mit eigenem Regler.
+        - Im Intro füllt sich die Folie im Takt. Eine Cartoon-Hand ploppt die ersten Blasen, und PLOPP landet Buchstabe für Buchstabe.
+        - Für ein Video gibt es einen Bonus, mit Premium auch ohne Video. Farbthemen und Sounds kannst du vorher ansehen und anhören.
+        - Klarere Namen. Aus Rolle wird Level, aus Meisterfolie Meisterrunde und aus Skillbäumen Talente. Ein neues Level und Prestige bekommen eine eigene Show.
 
 - slug: grammgenau
   name: Grammgenau
@@ -154,34 +136,21 @@
   milestones:
     - date: 2026-10-16
       title: Erste nutzbare Version
-      text: >-
-        Am ersten Tag stehen das Profil, das tägliche Kalorienziel und das
-        Essen in Gramm aus dem Bundeslebensmittelschlüssel.
-    - date: 2026-10-16
-      title: „Passt dein Ziel?“
-      text: >-
-        „Heute“ fragt jede Woche, ob das Ziel passt, und passt es an. Dazu
-        kommt eine animierte Waage.
+      points:
+        - Du legst dein Profil an und bekommst ein tägliches Kalorienziel.
+        - Du trägst dein Essen in Gramm ein, aus dem Bundeslebensmittelschlüssel.
+        - „Heute“ fragt jede Woche, ob das Ziel passt, und passt es an. Dazu kommt eine animierte Waage.
     - date: 2026-10-18
-      title: Der Rechner-Look
-      text: >-
-        „Heute“ und „Essen“ sehen jetzt aus wie ein Taschenrechner: Tasten für
-        die Mahlzeiten, ein Kalorienbalken und Makro-Symbole, die sich füllen.
-    - date: 2026-10-18
-      title: Barcode, Gewicht und Verlauf
-      text: >-
-        Produkte findest du über den Barcode. Du trägst dein Gewicht ein, und
-        ein Verlauf zeigt die letzten Wochen. Vergessene Tage trägst du nach.
-    - date: 2026-10-18
-      title: Eine Suche, die mitdenkt
-      text: >-
-        Die Suche versteht Alltagswörter wie „Käse“, verzeiht Tippfehler und
-        findet Markenprodukte auch ohne Internet. Was du oft isst, steht oben.
+      title: Rechner-Look, Barcode und Suche
+      points:
+        - „Heute“ und „Essen“ sehen aus wie ein Taschenrechner, mit Tasten für die Mahlzeiten, einem Kalorienbalken und Makro-Symbolen, die sich füllen.
+        - Produkte findest du über den Barcode.
+        - Du trägst dein Gewicht ein, und ein Verlauf zeigt die letzten Wochen. Vergessene Tage trägst du nach.
+        - Die Suche versteht Alltagswörter wie „Käse“, verzeiht Tippfehler und findet Markenprodukte auch ohne Internet. Was du oft isst, steht oben.
     - date: 2026-10-20
       title: Ziel nach dem Gewichtstrend
-      text: >-
-        Das Ziel rechnet mit dem geglätteten Trend deiner Wiegungen. Ein Tag
-        mit viel Wasser im Körper verschiebt es nicht mehr.
+      points:
+        - Das Ziel rechnet mit dem geglätteten Trend deiner Wiegungen. Ein Tag mit viel Wasser im Körper verschiebt es nicht mehr.
 
 - slug: movenote
   name: MoveNote
@@ -221,44 +190,27 @@
 
   milestones:
     - date: 2026-09-27
+      until: 2026-09-29
       title: Erste Version
-      text: >-
-        Am ersten Tag liest ein Text-Editor Workouts, markiert falsche Zeilen
-        rot und schlägt Übungen vom letzten Mal vor.
-    - date: 2026-09-29
-      title: Kalorienrechner
-      text: >-
-        Ein Rechner zeigt den Bedarf für Ruhe- und Trainingstage, ein
-        Kalorienziel aus dem Wochenziel und die Makros.
+      points:
+        - Ein Text-Editor liest Workouts, markiert falsche Zeilen rot und schlägt Übungen vom letzten Mal vor.
+        - Ein Rechner zeigt den Bedarf für Ruhe- und Trainingstage, ein Kalorienziel aus dem Wochenziel und die Makros.
     - date: 2026-10-02
-      title: Pausentimer
-      text: >-
-        Zwischen den Sätzen läuft ein Pausentimer mit Signal, auch auf dem
-        Sperrbildschirm und in der Dynamic Island.
-    - date: 2026-10-02
-      title: Tasten über der Tastatur
-      text: >-
-        Eine Leiste zeigt die Zeichen, die gerade passen, und Vorschläge vom
-        letzten Mal. Die Schreibweise musst du nicht auswendig kennen.
-    - date: 2026-10-03
-      title: Der Name MoveNote
-      text: >-
-        Die App heißt jetzt MoveNote und hat ein eigenes Icon.
+      until: 2026-10-03
+      title: Pausentimer und der Name MoveNote
+      points:
+        - Zwischen den Sätzen läuft ein Pausentimer mit Signal, auch auf dem Sperrbildschirm und in der Dynamic Island.
+        - Eine Leiste über der Tastatur zeigt die Zeichen, die gerade passen, und Vorschläge vom letzten Mal.
+        - Die App heißt jetzt MoveNote und hat ein eigenes Icon.
     - date: 2026-10-06
-      title: Planen
-      text: >-
-        Ein Kalender zeigt geplante und gemachte Workouts. Für jeden Tag siehst
-        du die geschätzte Dauer und dein Kalorienziel.
-    - date: 2026-10-06
-      title: Übersicht und Strava
-      text: >-
-        Nach dem Workout siehst du Dauer und bewegtes Gewicht. Auf Wunsch geht
-        das Workout zu Strava.
+      title: Planen und Strava
+      points:
+        - Ein Kalender zeigt geplante und gemachte Workouts, mit der geschätzten Dauer und dem Kalorienziel für jeden Tag.
+        - Nach dem Workout siehst du Dauer und bewegtes Gewicht. Auf Wunsch geht das Workout zu Strava.
     - date: 2026-10-15
       title: Rückgängig und Wiederholen
-      text: >-
-        Jede Änderung lässt sich rückgängig machen, auch ein gelöschtes
-        Workout.
+      points:
+        - Jede Änderung lässt sich rückgängig machen, auch ein gelöschtes Workout.
 
 - slug: pubg-stream-report
   name: PUBG Stream Report
@@ -302,30 +254,14 @@
           alt: "Treffer für einen Spieler, nach Tagen sortiert: rote Karten für „hat dich gekillt“, grüne für „Du hast … gekillt“."
   milestones:
     - date: 2026-10-08
-      title: Erster Prototyp
-      text: >-
-        Ein Skript findet zu einem PUBG-Namen alle Kills und Knocks gegen
-        Streamer und öffnet das Twitch-VOD kurz vor der Szene.
-    - date: 2026-10-08
-      title: Streamer am Wasserzeichen erkennen
-      text: >-
-        Die App liest das PUBG-Wasserzeichen im Vorschaubild eines Streams. So
-        findet sie auch Streamer, deren PUBG-Name anders ist als ihr
-        Twitch-Name.
-    - date: 2026-10-08
-      title: Die App fürs Handy
-      text: >-
-        Eine App für iOS und Android startet die Suche. Die Ergebnisse kommen
-        live, mit einem Fortschrittsbalken.
-    - date: 2026-10-09
-      title: Werbung und „Werbung entfernen“
-      text: >-
-        Die App zeigt Werbung. Ein einmaliger Kauf schaltet sie ab.
-    - date: 2026-10-11
-      title: Englisch und Store-Eintrag
-      text: >-
-        Die App gibt es jetzt auch auf Englisch. Icon, Screenshots und Texte
-        für App Store und Google Play sind fertig.
+      until: 2026-10-11
+      title: Vom Skript zur App
+      points:
+        - Ein Skript findet zu einem PUBG-Namen alle Kills und Knocks gegen Streamer und öffnet das Twitch-VOD kurz vor der Szene.
+        - Die App liest das PUBG-Wasserzeichen im Vorschaubild eines Streams. So findet sie auch Streamer, deren PUBG-Name anders ist als ihr Twitch-Name.
+        - Eine App für iOS und Android startet die Suche. Die Ergebnisse kommen live, mit einem Fortschrittsbalken.
+        - Die App zeigt Werbung. Ein einmaliger Kauf schaltet sie ab.
+        - Die App gibt es auch auf Englisch. Icon, Screenshots und Texte für App Store und Google Play sind fertig.
     - date: 2026-10-12
       title: Geschlossener Test bei Google Play
       key: true
@@ -334,21 +270,12 @@
         laden sie aus dem Play Store, und ihre Rückmeldungen bestimmen die
         nächsten Schritte.
     - date: 2026-10-14
-      title: Treffer teilen
-      text: >-
-        Ein Treffer lässt sich als Link verschicken. Freunde sehen die Szene
-        auch ohne App im Browser.
-    - date: 2026-10-16
-      title: Tabs und eigener Account
-      text: >-
-        Du verbindest deinen PUBG-Namen mit der App. Dazu kommen Tabs mit
-        Home, Statistiken, PUBG-News und einem Vergleich mit Streamern oder
-        Freunden.
-    - date: 2026-10-18
-      title: Was die Tester sagen
-      text: >-
-        Nach den ersten Rückmeldungen gibt es einen Willkommens-Bildschirm,
-        „Feedback senden“ und mehr Rückmeldung beim Tippen.
+      until: 2026-10-18
+      title: Teilen, Tabs und was die Tester sagen
+      points:
+        - Ein Treffer lässt sich als Link verschicken. Freunde sehen die Szene auch ohne App im Browser.
+        - Du verbindest deinen PUBG-Namen mit der App. Tabs zeigen Home, Statistiken, PUBG-News und einen Vergleich mit Streamern oder Freunden.
+        - Nach den ersten Rückmeldungen gibt es einen Willkommens-Bildschirm, „Feedback senden“ und mehr Rückmeldung beim Tippen.
     - date: 2026-10-22
       title: Bei Apple eingereicht
       key: true
