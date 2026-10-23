@@ -113,11 +113,12 @@
   how:
     - title: Berechnung der Kalorien
       text: >-
-        Erst mal ein paar Fragen zu dir: Wie schwer und wie groß bist du, wie
-        alt, Mann oder Frau? Wie viel bewegst du dich im Alltag, und wie viel
-        Sport machst du? Dann noch: abnehmen, halten oder aufbauen? Daraus
-        rechnet Grammgenau dein Tagesziel aus, mit einer Formel, die für
-        Sportler gemacht ist.
+        Im Onboarding (noch nicht fertig) werden die Kalorien berechnet, aus
+        den üblichen Fragen nach dem Körpergewicht, der Größe, dem Alter und
+        dem biologischen Geschlecht. Dazu kommen noch das Level der
+        Alltagsbewegung und wie viel Sport man treibt. Anschließend kommt die
+        Frage nach dem Ziel. Daraus berechnet Grammgenau dein Tagesziel. Das
+        ist die Basis für alles.
       media:
         - image: /assets/apps/grammgenau/heute.webp
           alt: "„Heute“ mit dem Tagesziel von 2.800 kcal: 1.791 kcal sind noch offen, darunter Kohlenhydrate, Eiweiß und Fett in Gramm."
