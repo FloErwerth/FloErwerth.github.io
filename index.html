@@ -1,0 +1,25 @@
+---
+layout: site
+toy: true
+---
+<section class="hero">
+  {% include tunnel.svg %}
+  {% include ticker.html %}
+  <h1 class="giant giant-hero"><span>Awesome</span><i aria-hidden="true">✦</i><span>Apps</span></h1>
+  {% include ticker.html reverse=true %}
+</section>
+
+<section class="statement cells">
+  <p class="cell annotation">( Was das hier ist )</p>
+  <p class="cell statement-text">Ich baue kleine Apps, jede für eine Sache. Hier stehen alle. Und hier schreibe ich auf, was sich an ihnen tut, damit ich dranbleibe.</p>
+</section>
+
+{% include ring.html %}
+
+<section class="board" aria-labelledby="updates-title">
+  <div class="cells board-head">
+    <h2 id="updates-title" class="cell board-title">Updates</h2>
+    <a class="cell board-all" href="{{ '/updates/' | relative_url }}">Alle Updates</a>
+  </div>
+  {% include update-cells.html posts=site.posts limit=6 %}
+</section>

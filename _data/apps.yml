@@ -1,0 +1,340 @@
+# Every app on the site, in the order the home page lists them.
+#
+# status: live | review | testing | building
+# store:  leave a key out until the listing is public.
+# icon:   leave it out while the app still has the Expo placeholder icon; the
+#         page then shows the app's initial on its colour.
+# legal:  paths on this site, or full URLs for an app published elsewhere.
+# how:    the steps of "So funktioniert's" on the app's page. A step shows
+#         `media` (screenshots and screen recordings from the app) or a `demo`
+#         (a drawing in _includes/how/, for an app with no recordings yet).
+#         Describe only what the app does today, not what is planned.
+
+- slug: plopp
+  name: PLOPP
+  tagline: Luftpolsterfolie zum Platzenlassen. Mit Münzen, Helfern und Talenten.
+  about: >-
+    Du wischst über ein Blatt Luftpolsterfolie und lässt so viele Blasen
+    platzen, wie du in 20 Sekunden schaffst. Mit den Münzen kaufst du Helfer,
+    die mitploppen. Jedes Level wird größer und härter.
+  platforms: [iOS, Android]
+  status: building
+  icon: /assets/icons/plopp.webp
+  colour: "#793ce5"
+  store: {}
+  legal: {}
+  how:
+    - title: Wischen, nicht tippen
+      text: >-
+        Eine Runde ist ein Blatt Folie und 20 Sekunden Zeit. Du reibst mit dem
+        Finger über die Blasen. Jede Berührung macht Schaden, bis die Blase
+        platzt. Goldblasen bringen fünfmal so viele Münzen und starten einen
+        Goldrausch.
+      media:
+        - video: /assets/apps/plopp/runde.mp4
+          poster: /assets/apps/plopp/runde.webp
+          alt: Eine Runde PLOPP. Ein Finger wischt über die Folie, Blasen platzen, bis alles geploppt ist.
+    - title: Zeit um oder alles geploppt
+      text: >-
+        Am Ende zählt, wie viel vom Blatt geplatzt ist. Für je 20 % bekommst du
+        einen Stern. Ploppst du alle Blasen vor dem Ende, gibt es die Hälfte
+        der Münzen noch einmal dazu.
+      media:
+        - image: /assets/apps/plopp/zeit-um.webp
+          alt: "Ergebnis „Zeit um!“: 98 % der Blasen, 4 Sterne, 27.711 Münzen."
+        - image: /assets/apps/plopp/alles-geploppt.webp
+          alt: "Ergebnis, wenn alles geploppt ist: 100 % der Blasen, 5 Sterne, 68.950 Münzen."
+    - title: Der Plopp-Shop
+      text: >-
+        Mit den Münzen machst du deinen Finger stärker und holst mehr Münzen
+        aus jeder Blase. Mit genug Sternen kommen Helfer dazu, die von selbst
+        ploppen: Blitz, Walze, Katze und Regen. Werbung siehst du nur, wenn du
+        willst: Für ein Video gibt es einen Bonus, zum Beispiel mehr Münzen
+        oder einen Helfer-Boost. Mit Premium bekommst du die Boni ohne Video.
+      media:
+        - video: /assets/apps/plopp/shop.mp4
+          poster: /assets/apps/plopp/shop.webp
+          alt: Der Plopp-Shop mit den Karten Finger, Münzen, Blitz, Walze, Katze und Regen.
+    - title: Level, Prestige und Talente
+      text: >-
+        Mit 5 Sternen öffnet sich die Meisterrunde: alle Blasen in 16
+        Sekunden. Schaffst du sie, ist das nächste Level spielbar, mit neuen
+        Blasen wie Stahl und Schilden. Ab Level 3 kannst du Prestige machen.
+        Dann fängst du bei Level 1 neu an und bekommst Punkte. Mit den Punkten
+        kaufst du Talente, und die bleiben für immer.
+      media:
+        - image: /assets/apps/plopp/level.webp
+          alt: "Die Übersicht zwischen den Runden: Level 5 von 10, 4 Sterne, der Knopf „Prestige +4“ und der Shop."
+        - image: /assets/apps/plopp/start.webp
+          alt: Der Startbildschirm von PLOPP mit Level, Sternen und Münzen.
+
+  milestones:
+    - date: 2026-10-20
+      title: Aus dem Browser aufs Handy
+      text: >-
+        Das Spiel lief zuerst als Prototyp im Browser. Jetzt läuft es als echte
+        App, mit Plopp-Tönen, Vibration und dem violetten Sticker-Look.
+    - date: 2026-10-21
+      title: Runden gegen die Uhr
+      text: >-
+        Eine Runde ist jetzt ein Blatt in 20 Sekunden, mit Sternen, Shop und
+        reifen Blasen. Dazu kommen die Helfer Blitz, Walze, Katze und Regen.
+    - date: 2026-10-21
+      title: Prestige und Talentbäume
+      text: >-
+        Das Spiel bekommt sein Ziel: neu anfangen, Punkte sammeln und sechs
+        Bäume mit Brücken dazwischen ausbauen. Am Ende wartet ein Endlosmodus.
+    - date: 2026-10-22
+      title: Das Spielgefühl
+      text: >-
+        Blasen wabbeln und ploppen mit Wucht, Münzen fliegen zum Zähler, und
+        alle Töne klingen in einer Tonart. Das Spiel pausiert beim App-Wechsel,
+        und eine Hand zeigt neuen Spielern das Rubbeln.
+    - date: 2026-10-23
+      title: Musik und Intro
+      text: >-
+        Musik läuft unter jedem Bildschirm, mit eigenem Regler. Beim Start
+        füllt sich die Folie im Takt, und PLOPP landet Buchstabe für Buchstabe.
+    - date: 2026-10-23
+      title: Freiwillige Werbung und Premium
+      text: >-
+        Für ein Video gibt es einen Bonus, mit Premium ohne Video. Dazu kommen
+        Farbthemen und Sounds, die man vorher ansehen und anhören kann.
+    - date: 2026-10-23
+      title: Klarere Namen
+      text: >-
+        Aus Rolle wird Level, aus Meisterfolie Meisterrunde und aus
+        Skillbäumen Talente. Große Schritte wie ein neues Level oder Prestige
+        bekommen eine eigene Show.
+
+- slug: grammgenau
+  name: Grammgenau
+  tagline: Ein Kalorienziel für Sportler, das jede Woche aus deinen eigenen Daten lernt.
+  about: >-
+    Grammgenau rechnet dein Tagesziel aus deinem Körper, deinem Alltag und
+    deinem Sport aus. Jede Woche fragt es, ob das Ziel passt, und vergleicht
+    deine Antwort mit deinen Wiegungen und deinem Essen. Alle Daten bleiben
+    auf deinem Gerät.
+  platforms: [Android]
+  status: building
+  colour: "#2f86f0"
+  store: {}
+  legal: {}
+  how:
+    - title: Erst die Basis
+      text: >-
+        Du gibst Gewicht, Größe, Geburtsdatum und Geschlecht ein, dazu deinen
+        Alltag und wie viel Sport du machst. Daraus rechnet die App deinen
+        Ruheumsatz mit einer Formel für Sportler. Dann wählst du: abnehmen,
+        halten oder aufbauen.
+      demo: grammgenau-basis
+    - title: Essen in Gramm
+      text: >-
+        Du suchst ein Lebensmittel und trägst ein, wie viele Gramm du gegessen
+        hast. Die App kennt den Bundeslebensmittelschlüssel und viele
+        Markenprodukte, auch über den Barcode. Die Suche versteht Tippfehler
+        und Umlaute. „Heute“ zeigt dir, wie viele Kalorien noch offen sind.
+      demo: grammgenau-essen
+    - title: "Einmal pro Woche: Passt dein Ziel?"
+      text: >-
+        Du sagst, ob du abnimmst, zunimmst oder ob es passt. Die App vergleicht
+        das mit dem Trend deiner Wiegungen und mit dem, was du gegessen hast.
+        Daraus rechnet sie deinen echten Bedarf und schlägt ein neues Ziel vor.
+        Je mehr Wochen du antwortest, desto genauer wird es.
+      demo: grammgenau-woche
+
+  milestones:
+    - date: 2026-10-16
+      title: Erste nutzbare Version
+      text: >-
+        Am ersten Tag stehen das Profil, das tägliche Kalorienziel und das
+        Essen in Gramm aus dem Bundeslebensmittelschlüssel.
+    - date: 2026-10-16
+      title: „Passt dein Ziel?“
+      text: >-
+        „Heute“ fragt jede Woche, ob das Ziel passt, und passt es an. Dazu
+        kommt eine animierte Waage.
+    - date: 2026-10-18
+      title: Der Rechner-Look
+      text: >-
+        „Heute“ und „Essen“ sehen jetzt aus wie ein Taschenrechner: Tasten für
+        die Mahlzeiten, ein Kalorienbalken und Makro-Symbole, die sich füllen.
+    - date: 2026-10-18
+      title: Barcode, Gewicht und Verlauf
+      text: >-
+        Produkte findest du über den Barcode. Du trägst dein Gewicht ein, und
+        ein Verlauf zeigt die letzten Wochen. Vergessene Tage trägst du nach.
+    - date: 2026-10-18
+      title: Eine Suche, die mitdenkt
+      text: >-
+        Die Suche versteht Alltagswörter wie „Käse“, verzeiht Tippfehler und
+        findet Markenprodukte auch ohne Internet. Was du oft isst, steht oben.
+    - date: 2026-10-20
+      title: Ziel nach dem Gewichtstrend
+      text: >-
+        Das Ziel rechnet mit dem geglätteten Trend deiner Wiegungen. Ein Tag
+        mit viel Wasser im Körper verschiebt es nicht mehr.
+
+- slug: movenote
+  name: MoveNote
+  tagline: Workouts als freien Text schreiben. Die App versteht, was du meinst.
+  about: >-
+    Du schreibst dein Workout wie eine Notiz. MoveNote liest den Text, erkennt
+    Übungen, Sätze und Gewichte und bereitet dein nächstes Training vor.
+    Alles bleibt auf deinem iPhone.
+  platforms: [iOS]
+  status: building
+  icon: /assets/icons/movenote.webp
+  colour: "#c6f432"
+  store: {}
+  legal: {}
+  how:
+    - title: Schreib, wie du denkst
+      text: >-
+        Die erste Zeile ist der Titel. Darunter steht jede Übung mit ihrem
+        Ziel und ihrer Pause, zum Beispiel „3x8 2min“. Jede Zeile darunter ist
+        ein Gewicht und die Wiederholungen jedes Satzes. Eine Leiste über der
+        Tastatur zeigt dir die Zeichen, die gerade passen.
+      demo: movenote-schreiben
+    - title: Die App versteht den Text
+      text: >-
+        Aus „70 8 8 7V“ wird: 70 kg, drei Sätze, der letzte bis zum Versagen.
+        Ein W steht für einen Aufwärmsatz, ein D für einen Dropsatz, 13/12 für
+        links und rechts. Mit „=> 72.5“ legst du das Gewicht für das nächste
+        Mal fest.
+      demo: movenote-verstehen
+    - title: Das nächste Mal ist schon vorbereitet
+      text: >-
+        Ein neues Workout übernimmt Übungen und Gewichte vom letzten Mal. Du
+        tippst nur noch die Wiederholungen. Nach jedem Satz startet der
+        Pausentimer von selbst, auch auf dem Sperrbildschirm. Am Ende siehst du
+        Dauer, bewegtes Gewicht und Sätze.
+      demo: movenote-vorbereitet
+
+  milestones:
+    - date: 2026-09-27
+      title: Erste Version
+      text: >-
+        Am ersten Tag liest ein Text-Editor Workouts, markiert falsche Zeilen
+        rot und schlägt Übungen vom letzten Mal vor.
+    - date: 2026-09-29
+      title: Kalorienrechner
+      text: >-
+        Ein Rechner zeigt den Bedarf für Ruhe- und Trainingstage, ein
+        Kalorienziel aus dem Wochenziel und die Makros.
+    - date: 2026-10-02
+      title: Pausentimer
+      text: >-
+        Zwischen den Sätzen läuft ein Pausentimer mit Signal, auch auf dem
+        Sperrbildschirm und in der Dynamic Island.
+    - date: 2026-10-02
+      title: Tasten über der Tastatur
+      text: >-
+        Eine Leiste zeigt die Zeichen, die gerade passen, und Vorschläge vom
+        letzten Mal. Die Schreibweise musst du nicht auswendig kennen.
+    - date: 2026-10-03
+      title: Der Name MoveNote
+      text: >-
+        Die App heißt jetzt MoveNote und hat ein eigenes Icon.
+    - date: 2026-10-06
+      title: Planen
+      text: >-
+        Ein Kalender zeigt geplante und gemachte Workouts. Für jeden Tag siehst
+        du die geschätzte Dauer und dein Kalorienziel.
+    - date: 2026-10-06
+      title: Übersicht und Strava
+      text: >-
+        Nach dem Workout siehst du Dauer und bewegtes Gewicht. Auf Wunsch geht
+        das Workout zu Strava.
+    - date: 2026-10-15
+      title: Rückgängig und Wiederholen
+      text: >-
+        Jede Änderung lässt sich rückgängig machen, auch ein gelöschtes
+        Workout.
+
+- slug: pubg-stream-report
+  name: PUBG Stream Report
+  tagline: Finde die PUBG-Momente, in denen du bei Twitch-Streamern im Bild warst.
+  about: >-
+    Gib deinen PUBG-Namen ein. Die App findet Runden, in denen du einen
+    Streamer oder sein Team gekillt hast oder von ihnen gekillt wurdest. Ein
+    Tipp springt an die Stelle im Twitch-VOD.
+  platforms: [iOS, Android]
+  status: testing
+  icon: /assets/icons/pubg-stream-report.webp
+  colour: "#f5a50b"
+  store: {}
+  legal:
+    datenschutz: /pubg-stream-report-legal/datenschutz/
+    privacy: /pubg-stream-report-legal/privacy/
+  how:
+    - title: Namen eingeben
+      text: >-
+        Gib deinen PUBG-Namen genau so ein wie im Spiel, mit Groß- und
+        Kleinschreibung. Die App sucht Spieler auf dem PC (Steam). Ein Konto
+        brauchst du nicht.
+      media:
+        - image: /assets/apps/pubg-stream-report/suche.webp
+          alt: "Die Suche: ein Namensfeld, der Knopf „Suchen“ und die letzten Suchanfragen."
+    - title: Die App gleicht ab
+      text: >-
+        Die App holt deine Matches der letzten 3 Tage von PUBG. Sie prüft jeden
+        Kill und jeden Knock zwischen dir und einem anderen Team. War dort ein
+        Streamer oder jemand aus seinem Team, der gerade live war, ist das ein
+        Treffer. „Ältere Matches“ sucht 14 Tage zurück.
+      demo: pubg-abgleich
+    - title: Treffer ansehen
+      text: >-
+        Jeder Treffer zeigt, wer wen gekillt oder geknockt hat, mit Waffe,
+        Entfernung und Uhrzeit. Ein Tipp öffnet das Twitch-VOD kurz vor dem
+        Moment. Dazu kommen Statistiken, ein Vergleich mit Streamern und die
+        PUBG-News.
+      media:
+        - image: /assets/apps/pubg-stream-report/treffer.webp
+          alt: "Treffer für einen Spieler, nach Tagen sortiert: rote Karten für „hat dich gekillt“, grüne für „Du hast … gekillt“."
+  milestones:
+    - date: 2026-10-08
+      title: Erster Prototyp
+      text: >-
+        Ein Skript findet zu einem PUBG-Namen alle Kills und Knocks gegen
+        Streamer und öffnet das Twitch-VOD kurz vor der Szene.
+    - date: 2026-10-08
+      title: Streamer am Wasserzeichen erkennen
+      text: >-
+        Die App liest das PUBG-Wasserzeichen im Vorschaubild eines Streams. So
+        findet sie auch Streamer, deren PUBG-Name anders ist als ihr
+        Twitch-Name.
+    - date: 2026-10-08
+      title: Die App fürs Handy
+      text: >-
+        Eine App für iOS und Android startet die Suche. Die Ergebnisse kommen
+        live, mit einem Fortschrittsbalken.
+    - date: 2026-10-09
+      title: Werbung und „Werbung entfernen“
+      text: >-
+        Die App zeigt Werbung. Ein einmaliger Kauf schaltet sie ab.
+    - date: 2026-10-11
+      title: Englisch und Store-Eintrag
+      text: >-
+        Die App gibt es jetzt auch auf Englisch. Icon, Screenshots und Texte
+        für App Store und Google Play sind fertig.
+    - date: 2026-10-14
+      title: Treffer teilen
+      text: >-
+        Ein Treffer lässt sich als Link verschicken. Freunde sehen die Szene
+        auch ohne App im Browser.
+    - date: 2026-10-16
+      title: Tabs und eigener Account
+      text: >-
+        Du verbindest deinen PUBG-Namen mit der App. Dazu kommen Tabs mit
+        Home, Statistiken, PUBG-News und einem Vergleich mit Streamern oder
+        Freunden.
+    - date: 2026-10-18
+      title: Was die Tester sagen
+      text: >-
+        Nach den ersten Rückmeldungen gibt es einen Willkommens-Bildschirm,
+        „Feedback senden“ und mehr Rückmeldung beim Tippen.
+    - date: 2026-10-22
+      title: Version 1.1 im Test
+      text: >-
+        Die Tester bekommen Version 1.1.0 über TestFlight und Google Play.

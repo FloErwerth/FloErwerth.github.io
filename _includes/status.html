@@ -1,0 +1,6 @@
+{%- case include.status -%}
+{%- when "live" -%}Im Store
+{%- when "review" -%}In der Prüfung beim Store
+{%- when "testing" -%}Im geschlossenen Test
+{%- else -%}In Arbeit
+{%- endcase -%}

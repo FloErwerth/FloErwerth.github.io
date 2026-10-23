@@ -1,0 +1,9 @@
+{%- comment -%}
+  An app's icon, or its initial on its colour while it still has the Expo
+  placeholder. Decorative: the app's name is always printed next to it.
+{%- endcomment -%}
+{%- if include.app.icon -%}
+<img class="icon {{ include.class }}" src="{{ include.app.icon | relative_url }}" alt="" width="256" height="256" loading="lazy" />
+{%- else -%}
+<span class="icon icon-initial {{ include.class }}" style="--app: {{ include.app.colour }}" aria-hidden="true">{{ include.app.name | slice: 0 }}</span>
+{%- endif -%}

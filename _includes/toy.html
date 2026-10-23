@@ -1,0 +1,14 @@
+{%- comment -%}
+  The end of the home page: every app icon, loose, landing on the wordmark
+  when you scroll down to it. assets/toy.js lets you pick them up and throw
+  them. Without script they stand in a row above it.
+{%- endcomment -%}
+<section class="toy" data-toy aria-label="Alle App-Icons zum Herumwerfen">
+  <p class="annotation toy-note">( Zum Schluss: Wirf sie ruhig herum )</p>
+  <div class="toy-bodies" aria-hidden="true">
+    {%- for app in site.data.apps %}
+    <a class="toy-body" data-toy-body href="{{ '/' | append: app.slug | append: '/' | relative_url }}" tabindex="-1" draggable="false">{% include app-icon.html app=app %}</a>
+    {%- endfor %}
+  </div>
+  <p class="giant giant-foot" data-toy-floor aria-hidden="true">awesomeapps.fun</p>
+</section>

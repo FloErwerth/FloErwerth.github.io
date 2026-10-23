@@ -1,0 +1,32 @@
+{%- comment -%}
+  The apps on a curved wall, after jesperlandberg.com: the cards stand round a
+  drum, and you turn the drum. Each card sits at its own angle, set here,
+  so the ring holds its shape without script; assets/ring.js adds dragging.
+{%- endcomment -%}
+<section class="stage" id="apps" aria-labelledby="apps-title">
+  <div class="stage-head">
+    <h2 id="apps-title" class="stage-title">Die Apps</h2>
+    <p class="annotation">( Ziehen zum Drehen, Tippen zum Öffnen )</p>
+  </div>
+  <div class="ring-view" data-ring>
+    <div class="ring-floor" aria-hidden="true"></div>
+    <ul class="ring" data-ring-track style="--n: {{ site.data.apps.size }}">
+      {%- for app in site.data.apps %}
+      <li class="card" data-ring-card style="--i: {{ forloop.index0 }}; --app: {{ app.colour }}">
+        <a href="{{ '/' | append: app.slug | append: '/' | relative_url }}" draggable="false">
+          <span class="card-glow" aria-hidden="true"></span>
+          {% include app-icon.html app=app class="card-icon" %}
+          <span class="card-name">{{ app.name }}</span>
+          <span class="card-tagline">{{ app.tagline }}</span>
+          <span class="card-meta">{{ app.platforms | join: " und " }}<br />{% include status.html status=app.status %}</span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+  <div class="cells stage-controls">
+    <button class="cell" type="button" data-ring-step="-1">Vorige App</button>
+    <p class="cell stage-count" aria-live="polite"><span data-ring-count>1</span> von {{ site.data.apps.size }}</p>
+    <button class="cell" type="button" data-ring-step="1">Nächste App</button>
+  </div>
+</section>

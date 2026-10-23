@@ -1,0 +1,112 @@
+/*
+  These pages are opened inside the app, in an in-app browser, on a phone held
+  by someone who tapped "Privacy policy" and wants an answer. So: one column,
+  no chrome, system fonts, and a dark mode that matches the app they came from.
+*/
+
+:root {
+  --ink: #1c1e26;
+  --ink-quiet: #5c6070;
+  --ground: #ffffff;
+  --rule: #e2e4ea;
+  --link: #2f5bd0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e8e9ee;
+    --ink-quiet: #9aa0b0;
+    /* The app's own background, so arriving here is not a flash of white. */
+    --ground: #161826;
+    --rule: #2c2f42;
+    --link: #8ab0ff;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  /* iOS shrinks text in landscape without this. */
+  -webkit-text-size-adjust: 100%;
+}
+
+main {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 5rem;
+}
+
+h1 {
+  font-size: 1.9rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.5rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  margin: 2.5rem 0 0.75rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin: 1.75rem 0 0.5rem;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1rem;
+}
+
+ul,
+ol {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+a {
+  color: var(--link);
+  /* Long URLs are printed in full in these documents rather than hidden behind
+     words, and a phone is narrow. Better to wrap than to overflow. */
+  overflow-wrap: anywhere;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* The dateline under the title, and the closing address block. */
+main > p:first-of-type {
+  color: var(--ink-quiet);
+}
+
+footer {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 0 1.25rem 2.5rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--ink-quiet);
+}

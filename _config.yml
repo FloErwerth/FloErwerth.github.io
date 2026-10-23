@@ -1,0 +1,41 @@
+title: awesomeapps.fun
+description: Kleine Apps von Florian Erwerth, alle an einem Ort.
+url: https://awesomeapps.fun
+lang: de
+
+# The address is printed in the Impressum and in every privacy policy. It lives
+# here once, so a move is one edit and not a hunt through every document.
+author: Florian Erwerth
+address: "Brudermühlstraße 18<br>81371 München<br>Deutschland"
+email: erwerthflorian@outlook.de
+
+# No theme. Every GitHub Pages theme paints a sidebar with the site owner's name
+# and a link back to the repository, and a privacy policy is not a place to
+# advertise where its source lives. The layouts in `_layouts/` are ours.
+
+# Updates are posts. The date is in the file name, the URL does not need it.
+permalink: /updates/:title/
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+# app-ads.txt is a record for a crawler, not a page. Jekyll copies it through
+# untouched as long as it is not treated as content.
+include:
+  - app-ads.txt
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+
+defaults:
+  - scope:
+      type: posts
+    values:
+      layout: post

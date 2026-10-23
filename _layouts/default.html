@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title }}</title>
+    <!--
+      Nothing here names the author or points at the repository. A privacy
+      policy is read by someone who wants to know what happens to their data,
+      and every other link on the page is a thing between them and that answer.
+    -->
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}" />
+  </head>
+  <body>
+    <main>{{ content }}</main>
+    <!--
+      The one link that is allowed: German law wants the Impressum one tap
+      away from every page. It comes after the document, so it stands between
+      the reader and nothing.
+    -->
+    <footer><a href="{{ '/impressum/' | relative_url }}">Impressum</a></footer>
+  </body>
+</html>

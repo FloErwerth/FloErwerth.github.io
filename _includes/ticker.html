@@ -1,0 +1,15 @@
+{%- comment -%}
+  A thin band of small text running sideways between two rules. It repeats
+  the apps and where each one stands. Pass `reverse=true` for the other way.
+{%- endcomment -%}
+<div class="ticker{% if include.reverse %} ticker-reverse{% endif %}" aria-hidden="true">
+  <div class="ticker-track">
+    {%- for round in (1..4) %}
+    <span>
+      {%- for app in site.data.apps -%}
+      {{ app.name }} ({% include status.html status=app.status %}) <i>✦</i>
+      {%- endfor -%}
+    </span>
+    {%- endfor %}
+  </div>
+</div>

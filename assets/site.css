@@ -1,0 +1,1374 @@
+/*
+  The site around the apps: the home page, the app pages and the updates.
+  The legal documents of each app keep their own quieter sheet (style.css),
+  because they are opened in an in-app browser by someone who wants one answer.
+
+  Three borrowed ideas, one sheet:
+  - wodniack.dev: drawn on like graph paper. Every block is a cell in a grid
+    of lines; empty cells are hatched; a room in perspective sits behind the
+    big type; small text runs in bands.
+  - jesperlandberg.com: the work on a curved wall you turn by dragging.
+  - noth.in: the name set as large as the screen allows, and quiet notes in
+    parentheses beside the big statements.
+
+  The look is toy plastic: each section has its own sweet colour, every line
+  is a thick ink outline, and the icons cast hard shadows like things you can
+  pick up. That suits a site called .fun, and the throwing toy at the end.
+  A section sets --sheet; its cells take it from there.
+*/
+
+@font-face {
+  font-family: 'Big Shoulders Display';
+  src: url('fonts/big-shoulders-latin.woff2') format('woff2');
+  font-weight: 500 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Newsreader';
+  src: url('fonts/newsreader-latin.woff2') format('woff2');
+  font-weight: 300 500;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --ink: #1d1a2b;
+  --cream: #fffaf2;
+  --white: #ffffff;
+  --butter: #ffd84d;
+  --pink: #ffb3d9;
+  --lilac: #c4b5ff;
+  --mint: #9ff0c4;
+  --orange: #ff9f6b;
+  --sheet: var(--cream);
+  --line: var(--ink);
+  --line-faint: rgb(29 26 43 / 0.22);
+  --shadow: 0.3rem 0.3rem 0 var(--ink);
+  --display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+  --serif: 'Newsreader', Georgia, serif;
+  --small: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  /* iOS icon corner: 22.37 % of the side. */
+  --squircle: 22.37%;
+  --pad: clamp(1rem, 2.2vw, 1.75rem);
+  --frame: clamp(0.35rem, 0.8vw, 0.6rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  background: var(--ink);
+}
+
+body {
+  margin: 0;
+  padding: var(--frame);
+  min-height: 100svh;
+  background: var(--ink);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.1875rem;
+  font-weight: 350;
+  line-height: 1.55;
+}
+
+/* The sheet inside the ink frame, like the page border on wodniack.dev. */
+body > * {
+  background-color: var(--sheet);
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: -6px;
+}
+
+h1,
+h2,
+p,
+ul,
+ol,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Cells: a grid whose gaps are the lines. */
+
+.cells {
+  display: grid;
+  gap: 2px;
+  background-color: var(--line);
+  border-bottom: 2px solid var(--line);
+}
+
+.cell {
+  position: relative;
+  background: var(--sheet);
+  padding: var(--pad);
+}
+
+.hatch {
+  background:
+    repeating-linear-gradient(135deg, var(--line) 0 1px, transparent 1px 11px),
+    var(--sheet);
+}
+
+/* A plus sign in two corners of a cell, the registration marks of the sheet. */
+.cross::before,
+.cross::after {
+  content: '+';
+  position: absolute;
+  font-family: var(--small);
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.cross::before {
+  top: 0.5rem;
+  left: 0.6rem;
+}
+
+.cross::after {
+  right: 0.6rem;
+  bottom: 0.5rem;
+}
+
+/* A quiet note in parentheses, as on noth.in. */
+.annotation {
+  font-family: var(--small);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* The big type. */
+
+.giant {
+  font-family: var(--display);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+/* Header */
+
+.masthead {
+  --sheet: var(--white);
+  grid-template-columns: 2fr 1fr 1fr;
+  font-family: var(--small);
+  font-size: 0.875rem;
+  line-height: 1.3;
+}
+
+.masthead .cell {
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+}
+
+.masthead-home {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+.monogram {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+}
+
+.masthead-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.masthead-note {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 40rem) {
+  .masthead {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .masthead-name,
+  .masthead-note {
+    display: none;
+  }
+}
+
+/* Hero: the room, two bands of names, and the name across the room. */
+
+.hero {
+  --sheet: var(--butter);
+  background: var(--sheet);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: min(88svh, 52rem);
+  overflow: hidden;
+  border-bottom: 2px solid var(--line);
+}
+
+.tunnel {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  stroke: var(--line-faint);
+  stroke-width: 1;
+  fill: none;
+  pointer-events: none;
+}
+
+.tunnel line {
+  vector-effect: non-scaling-stroke;
+}
+
+.giant-hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.04em 0.06em 0;
+  /* Sized so the two words fill the width of the room. */
+  font-size: 16.5vw;
+  text-transform: uppercase;
+}
+
+.giant-hero i {
+  font-style: normal;
+  font-size: 0.32em;
+  font-family: var(--small);
+}
+
+@media (max-width: 40rem) {
+  .giant-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 25.5vw;
+    line-height: 0.82;
+  }
+
+  .giant-hero i {
+    display: none;
+  }
+}
+
+.ticker {
+  --sheet: var(--white);
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid var(--line);
+  border-bottom: 2px solid var(--line);
+  background: var(--sheet);
+  font-family: var(--small);
+  font-size: 0.75rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: run 60s linear infinite;
+}
+
+.ticker-reverse .ticker-track {
+  animation-direction: reverse;
+}
+
+.ticker span {
+  padding: 0.6rem 0;
+}
+
+.ticker i {
+  font-style: normal;
+  margin: 0 1.25rem;
+}
+
+@keyframes run {
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+
+/* The statement under the hero. */
+
+.statement {
+  --sheet: var(--pink);
+  grid-template-columns: 1fr 3fr;
+}
+
+.statement-text {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(1.6rem, 3.4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  max-width: 30ch;
+}
+
+.statement .statement-text {
+  max-width: none;
+  padding-top: calc(var(--pad) * 2);
+  padding-bottom: calc(var(--pad) * 3);
+}
+
+@media (max-width: 40rem) {
+  .statement {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*
+  The ring of apps. Each card stands at its own angle round a drum behind the
+  screen; turning the drum brings the next card to the front. --rot is set by ring.js.
+*/
+
+.stage {
+  position: relative;
+  --sheet: var(--lilac);
+  background: var(--sheet);
+  border-bottom: 2px solid var(--line);
+  overflow: hidden;
+  --R: 1050px;
+  --step: 23deg;
+  --cw: 20rem;
+  --ch: 27rem;
+}
+
+.stage-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: var(--pad);
+}
+
+.stage-title {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(3rem, 9vw, 8rem);
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.ring-view {
+  position: relative;
+  height: calc(var(--ch) + 8rem);
+  perspective: 1100px;
+  perspective-origin: 50% 40%;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+}
+
+.ring-view.is-dragging {
+  cursor: grabbing;
+}
+
+.ring-floor {
+  position: absolute;
+  left: -50%;
+  right: -50%;
+  bottom: 0;
+  height: 70%;
+  background:
+    repeating-linear-gradient(90deg, var(--line-faint) 0 1px, transparent 1px 80px),
+    repeating-linear-gradient(0deg, var(--line-faint) 0 1px, transparent 1px 80px);
+  transform: rotateX(72deg);
+  transform-origin: 50% 100%;
+  mask-image: linear-gradient(to top, #000 10%, transparent 85%);
+  -webkit-mask-image: linear-gradient(to top, #000 10%, transparent 85%);
+}
+
+.ring {
+  --rot: calc((var(--n) - 1) / 2 * var(--step));
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transform-style: preserve-3d;
+  transform: translateZ(calc(var(--R) * -1)) rotateY(calc(var(--rot) * -1));
+}
+
+.card {
+  position: absolute;
+  width: var(--cw);
+  height: var(--ch);
+  margin-left: calc(var(--cw) / -2);
+  margin-top: calc(var(--ch) / -2);
+  transform: rotateY(calc(var(--i) * var(--step))) translateZ(var(--R));
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.25rem;
+  overflow: hidden;
+  border: 2px solid var(--line);
+  border-radius: 1.75rem;
+  background: var(--white);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card-glow {
+  position: absolute;
+  inset: -30% -30% 35%;
+  background: radial-gradient(closest-side, var(--app), transparent);
+  opacity: 0.4;
+}
+
+.card .card-icon {
+  position: relative;
+  width: 7.5rem;
+  height: 7.5rem;
+  margin: 2.5rem auto 0;
+  font-size: 3.75rem;
+  box-shadow: var(--shadow);
+  outline: 2px solid var(--ink);
+}
+
+.card-name {
+  position: relative;
+  margin-top: auto;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 2.75rem;
+  line-height: 0.9;
+}
+
+.card-tagline {
+  position: relative;
+  margin-top: 0.6rem;
+  font-size: 1.0625rem;
+  line-height: 1.3;
+}
+
+.card-meta {
+  position: relative;
+  margin-top: 0.9rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--small);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.stage-controls {
+  grid-template-columns: 1fr auto 1fr;
+  border-top: 2px solid var(--line);
+  border-bottom: 0;
+  font-family: var(--small);
+  font-size: 0.875rem;
+}
+
+.stage-controls .cell {
+  background: var(--white);
+}
+
+.stage-controls button {
+  border: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.stage-controls button:last-child {
+  text-align: right;
+}
+
+.stage-controls button:hover {
+  background: var(--butter);
+}
+
+.stage-count {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 40rem) {
+  .stage {
+    --R: 560px;
+    --step: 36deg;
+    --cw: 15rem;
+    --ch: 22rem;
+  }
+
+  .card .card-icon {
+    width: 5.5rem;
+    height: 5.5rem;
+    margin-top: 1.5rem;
+    font-size: 2.75rem;
+  }
+
+  .card-name {
+    font-size: 2.25rem;
+  }
+}
+
+/* Updates as a block of cells. */
+
+.board {
+  --sheet: var(--mint);
+}
+
+.board-head {
+  grid-template-columns: 1fr auto;
+}
+
+.board-title {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(3rem, 9vw, 8rem);
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.board-all {
+  display: flex;
+  align-items: flex-end;
+  font-family: var(--small);
+  font-size: 0.875rem;
+}
+
+.bento {
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bento-cell {
+  display: flex;
+  flex-direction: column;
+  min-height: 15rem;
+  padding-top: 2.25rem;
+}
+
+.bento-cell time {
+  font-family: var(--small);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.bento-title {
+  margin-top: 0.5rem;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 0.95;
+  text-decoration: none;
+}
+
+.bento-title:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.bento-apps {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-family: var(--small);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.bento-empty {
+  grid-column: 1 / -1;
+  min-height: 0;
+}
+
+@media (max-width: 52rem) {
+  .bento {
+    grid-template-columns: 1fr;
+  }
+
+  .bento .hatch {
+    display: none;
+  }
+}
+
+/* The end of the home page: icons to throw, landing on the name. */
+
+.toy {
+  --sheet: var(--orange);
+  background: var(--sheet);
+  position: relative;
+  height: clamp(26rem, 70svh, 44rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  border-bottom: 2px solid var(--line);
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.toy-note {
+  position: absolute;
+  top: var(--pad);
+  left: var(--pad);
+}
+
+.toy-bodies {
+  position: absolute;
+  inset: 0;
+}
+
+.toy-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: grab;
+  touch-action: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  opacity: 0;
+}
+
+.toy.is-ready .toy-body {
+  opacity: 1;
+}
+
+.toy-body.is-held {
+  cursor: grabbing;
+  z-index: 1;
+}
+
+.toy-body .icon {
+  width: clamp(4rem, 10vw, 7rem);
+  height: clamp(4rem, 10vw, 7rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  box-shadow: var(--shadow);
+  outline: 2px solid var(--ink);
+  pointer-events: none;
+}
+
+.giant-foot {
+  /* Sized so "awesomeapps.fun" fills the width. */
+  font-size: 13.8vw;
+  line-height: 0.72;
+  letter-spacing: -0.02em;
+  padding: 0 0.02em 0.06em;
+}
+
+.toy:not(.is-ready) .toy-bodies {
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 4rem var(--pad) 1.5rem;
+}
+
+.toy:not(.is-ready) .toy-body {
+  position: static;
+  opacity: 1;
+}
+
+/* Footer */
+
+.colophon {
+  grid-template-columns: repeat(4, 1fr);
+  font-family: var(--small);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 40rem) {
+  .colophon {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Icons */
+
+.icon {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--squircle);
+  flex: none;
+}
+
+.icon-initial {
+  display: grid;
+  place-items: center;
+  background: var(--app);
+  color: #fff;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.icon-small {
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 1rem;
+}
+
+/* App page */
+
+.hero-app {
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(2rem, 6vh, 4rem);
+  padding-top: 4rem;
+}
+
+.hero-app-icon {
+  position: relative;
+  padding: 1.5rem;
+  border: 2px solid var(--line);
+  background: var(--sheet);
+}
+
+.icon-hero {
+  width: clamp(7rem, 16vw, 11rem);
+  height: clamp(7rem, 16vw, 11rem);
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  box-shadow: var(--shadow);
+  outline: 2px solid var(--ink);
+}
+
+.giant-app,
+.giant-post {
+  position: relative;
+  align-self: stretch;
+  padding: 0 var(--pad) 0.05em;
+  font-size: clamp(4rem, 15vw, 15rem);
+  text-transform: uppercase;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.app-sheet {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.app-about {
+  grid-column: span 2;
+  padding-bottom: calc(var(--pad) * 2.5);
+}
+
+.app-about p + p {
+  margin-top: 1.25rem;
+  max-width: 38rem;
+}
+
+.app-fact {
+  min-height: 8rem;
+}
+
+.app-fact dt {
+  font-family: var(--small);
+  font-size: 0.8125rem;
+}
+
+.app-fact dd {
+  margin-top: 0.4rem;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 2.25rem;
+  line-height: 1;
+}
+
+.app-store {
+  grid-column: 1 / -1;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.app-store:hover {
+  background: var(--ink);
+  color: var(--sheet);
+}
+
+.legal-row {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 40rem) {
+  .app-sheet,
+  .legal-row {
+    grid-template-columns: 1fr;
+  }
+
+  .app-about {
+    grid-column: auto;
+  }
+}
+
+/*
+  How an app works: one row of two cells per step, the words and the phone.
+  The phone cells take turns in three of the sweet colours, and the side they
+  stand on swaps every step, so the steps read as a path down the page.
+*/
+
+.how-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.how-step {
+  grid-template-columns: 1fr 1fr;
+}
+
+.how-step:nth-child(even) .how-media {
+  order: -1;
+}
+
+.how-step:nth-child(3n + 1) .how-media {
+  --sheet: var(--pink);
+}
+
+.how-step:nth-child(3n + 2) .how-media {
+  --sheet: var(--lilac);
+}
+
+.how-step:nth-child(3n) .how-media {
+  --sheet: var(--orange);
+}
+
+.how-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: calc(var(--pad) * 2);
+  padding-bottom: calc(var(--pad) * 2);
+}
+
+.how-text p {
+  max-width: 32rem;
+}
+
+.how-number {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--butter);
+  box-shadow: var(--shadow);
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.how-title {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  line-height: 0.92;
+}
+
+.how-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: calc(var(--pad) * 1.5);
+  padding-bottom: calc(var(--pad) * 2);
+}
+
+.how-label {
+  align-self: flex-start;
+}
+
+.how-phones {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  width: 100%;
+}
+
+.phone {
+  flex: 0 1 15rem;
+  margin: 0;
+  aspect-ratio: 9 / 20;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: 1.75rem;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.phone img,
+.phone video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 52rem) {
+  .how-step {
+    grid-template-columns: 1fr;
+  }
+
+  .how-step:nth-child(even) .how-media {
+    order: 0;
+  }
+}
+
+/* The drawings: what a screen of the app says, not how it looks. */
+
+.phone-demo {
+  flex-basis: 17rem;
+}
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  height: 100%;
+  padding: 1.75rem 1.1rem 1.25rem;
+  font-family: var(--small);
+  font-size: 0.875rem;
+  line-height: 1.35;
+}
+
+.demo-head {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.demo-sub,
+.demo-next {
+  margin-top: -0.5rem;
+}
+
+.demo-note {
+  margin-top: auto;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.demo-chain,
+.demo-list,
+.demo-sets,
+.demo-flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.demo-chain li,
+.demo-flow li {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0.8rem;
+  border: 2px solid var(--ink);
+  border-radius: 0.9rem;
+}
+
+.demo-chain b,
+.demo-big b,
+.demo-swap b,
+.demo-timer b {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.demo-chain .demo-op {
+  align-self: center;
+  padding: 0;
+  border: 0;
+  font-weight: 600;
+}
+
+.demo-result {
+  background: var(--app);
+}
+
+.demo-big {
+  display: flex;
+  flex-direction: column;
+}
+
+.demo-big b {
+  font-size: 3.75rem;
+}
+
+.demo-stripe {
+  display: flex;
+  height: 0.75rem;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: 1rem;
+}
+
+.demo-stripe i:nth-child(1) {
+  background: var(--butter);
+}
+
+.demo-stripe i:nth-child(2) {
+  background: var(--mint);
+}
+
+.demo-stripe i:nth-child(3) {
+  background: var(--white);
+}
+
+.demo-list li {
+  display: flex;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line-faint);
+}
+
+.demo-list li > :first-child {
+  flex: 1;
+}
+
+.demo-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.demo-choices span {
+  padding: 0.35rem 0.7rem;
+  border: 2px solid var(--ink);
+  border-radius: 2rem;
+}
+
+.demo-choices .is-on {
+  background: var(--app);
+}
+
+.demo-swap {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.demo-swap s {
+  opacity: 0.5;
+}
+
+.demo-note-text {
+  flex: 1;
+  margin: 0;
+  font-family: var(--small);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.demo-note-text u {
+  text-decoration-color: var(--ink);
+  text-decoration-thickness: 2px;
+}
+
+.demo-keys {
+  display: flex;
+  gap: 0.35rem;
+  margin: 0 -0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.9rem;
+  background: var(--cream);
+  border: 2px solid var(--ink);
+}
+
+.demo-keys span {
+  flex: 1;
+  padding: 0.3rem 0;
+  border-radius: 0.5rem;
+  background: var(--white);
+  border: 1px solid var(--ink);
+  text-align: center;
+  font-weight: 600;
+}
+
+.demo-sets li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.6rem 0.7rem;
+  border: 2px solid var(--ink);
+  border-radius: 0.9rem;
+}
+
+.demo-sets span {
+  flex-basis: 100%;
+  font-size: 0.75rem;
+}
+
+.demo-sets b {
+  margin-right: 0.25rem;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.demo-sets i {
+  padding: 0.1rem 0.45rem;
+  border-radius: 0.4rem;
+  background: var(--cream);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.demo-sets .is-fail {
+  background: var(--app);
+}
+
+.demo-timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.9rem;
+  border: 2px solid var(--ink);
+  border-radius: 2rem;
+  background: var(--app);
+}
+
+.demo-flow li {
+  position: relative;
+}
+
+.demo-flow li + li {
+  margin-top: 0.9rem;
+}
+
+.demo-flow li + li::before {
+  content: '↓';
+  position: absolute;
+  top: -1.45rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 700;
+}
+
+.demo-flow b {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  line-height: 1.05;
+}
+
+/*
+  The timeline: one row per milestone, the date on butter and the step on
+  white. A dot sits on the line between them, so the rows read as stops on
+  one track down the page.
+*/
+
+.timeline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-step {
+  grid-template-columns: minmax(9rem, 1fr) 3fr;
+}
+
+.timeline-date {
+  --sheet: var(--butter);
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.timeline-date::after {
+  content: '';
+  position: absolute;
+  top: calc(var(--pad) + 0.35rem);
+  right: -0.65rem;
+  z-index: 1;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--app);
+}
+
+.timeline-body {
+  --sheet: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-left: calc(var(--pad) * 1.5);
+}
+
+.timeline-title {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  line-height: 1;
+}
+
+.timeline-body p {
+  max-width: 40rem;
+}
+
+.timeline-title a {
+  text-decoration: none;
+}
+
+.timeline-title a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+@media (max-width: 40rem) {
+  .timeline-step {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-date {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 1.5rem;
+  }
+
+  .timeline-date::after {
+    top: auto;
+    right: var(--pad);
+    bottom: -0.65rem;
+  }
+}
+
+/* Updates and single posts */
+
+.hero-post {
+  justify-content: flex-end;
+  gap: 1.5rem;
+  min-height: min(60svh, 34rem);
+  padding-top: 4rem;
+}
+
+.hero-post .annotation {
+  position: relative;
+  padding: 0 var(--pad);
+}
+
+.giant-post {
+  font-size: clamp(3.5rem, 10vw, 10rem);
+}
+
+.post-sheet {
+  grid-template-columns: 3fr 1fr;
+}
+
+.post-body p {
+  max-width: 36rem;
+}
+
+.post-body p + p {
+  margin-top: 1rem;
+}
+
+.post-body > p:first-child {
+  font-weight: 300;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  line-height: 1.25;
+}
+
+.post-apps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-family: var(--small);
+  font-size: 0.875rem;
+}
+
+.post-apps a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+@media (max-width: 40rem) {
+  .post-sheet {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Documents: Impressum and the privacy policy of this site */
+
+.doc {
+  padding-top: calc(var(--pad) * 2);
+  padding-bottom: calc(var(--pad) * 3);
+}
+
+.doc > * {
+  max-width: 40rem;
+}
+
+.doc h1 {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  line-height: 0.8;
+  text-transform: uppercase;
+  max-width: none;
+  margin-bottom: 2rem;
+}
+
+.doc h2 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1;
+  margin: 2.5rem 0 0.75rem;
+}
+
+.doc p + p {
+  margin-top: 1rem;
+}

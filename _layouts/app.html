@@ -1,0 +1,125 @@
+---
+layout: site
+---
+{%- assign app = site.data.apps | where: "slug", page.app | first -%}
+{%- assign app_posts = site.posts | where_exp: "post", "post.apps contains app.slug" -%}
+<article class="app-page" style="--app: {{ app.colour }}">
+  <header class="hero hero-app">
+    {% include tunnel.svg %}
+    <div class="hero-app-icon">
+      <span class="cross" aria-hidden="true"></span>
+      {% include app-icon.html app=app class="icon-hero" %}
+    </div>
+    <h1 class="giant giant-app">{{ app.name }}</h1>
+  </header>
+
+  <div class="cells app-sheet">
+    <p class="cell annotation">( Was die App macht )</p>
+    <div class="cell app-about">
+      <p class="statement-text">{{ app.tagline }}</p>
+      <p>{{ app.about }}</p>
+      {{ content }}
+    </div>
+    <dl class="cell app-fact"><dt>Für</dt><dd>{{ app.platforms | join: " und " }}</dd></dl>
+    <dl class="cell app-fact"><dt>Stand</dt><dd>{% include status.html status=app.status %}</dd></dl>
+    <div class="cell app-fact hatch" aria-hidden="true"></div>
+    {%- if app.store.ios %}
+    <a class="cell app-store" href="{{ app.store.ios }}">Im App Store laden</a>
+    {%- endif %}
+    {%- if app.store.android %}
+    <a class="cell app-store" href="{{ app.store.android }}">Bei Google Play laden</a>
+    {%- endif %}
+  </div>
+
+  {%- if app.how %}
+  {%- comment -%}
+    How the app works, step by step. A step is shown with what the app really
+    looks like where there are recordings, and with a labelled drawing where
+    there are none yet, so nothing here passes a drawing off as a screenshot.
+  {%- endcomment %}
+  <section class="how" aria-labelledby="how-title">
+    <div class="cells">
+      <h2 id="how-title" class="cell board-title">So funktioniert's</h2>
+    </div>
+    <ol class="how-steps">
+      {%- for step in app.how %}
+      <li class="cells how-step">
+        <div class="cell how-text">
+          <span class="how-number" aria-hidden="true">{{ forloop.index }}</span>
+          <h3 class="how-title">{{ step.title }}</h3>
+          <p>{{ step.text }}</p>
+        </div>
+        <div class="cell how-media">
+          {%- if step.media %}
+          <p class="annotation how-label">( Aus der App )</p>
+          <div class="how-phones">
+            {%- for m in step.media %}
+            <figure class="phone">
+              {%- if m.video %}
+              <video src="{{ m.video | relative_url }}" poster="{{ m.poster | relative_url }}" muted loop playsinline preload="none" aria-label="{{ m.alt }}" data-how-video></video>
+              {%- else %}
+              <img src="{{ m.image | relative_url }}" alt="{{ m.alt }}" width="540" height="1200" loading="lazy" />
+              {%- endif %}
+            </figure>
+            {%- endfor %}
+          </div>
+          {%- elsif step.demo %}
+          <p class="annotation how-label">( Skizze )</p>
+          <div class="how-phones">
+            <figure class="phone phone-demo">
+              <div class="demo">{% include how/{{ step.demo }}.html %}</div>
+            </figure>
+          </div>
+          {%- endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+  {%- endif %}
+
+  {%- comment -%}
+    Everything that happened to the app, oldest first, as one line: the
+    milestones from its commit history, then the posts that name it. The
+    posts are newer than the history, since they began with this site.
+  {%- endcomment %}
+  {%- assign app_posts_old_first = app_posts | reverse %}
+  <section class="timeline" aria-labelledby="timeline-title">
+    <div class="cells board-head">
+      <h2 id="timeline-title" class="cell board-title">Updates zu {{ app.name }}</h2>
+      <a class="cell board-all" href="{{ '/updates/' | relative_url }}">Alle Updates</a>
+    </div>
+    <ol class="timeline-list">
+      {%- for m in app.milestones %}
+      <li class="cells timeline-step">
+        <time class="cell timeline-date" datetime="{{ m.date | date: '%Y-%m-%d' }}">{{ m.date | date: "%-d.%-m.%Y" }}</time>
+        <div class="cell timeline-body">
+          <h3 class="timeline-title">{{ m.title }}</h3>
+          <p>{{ m.text }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+      {%- for post in app_posts_old_first %}
+      <li class="cells timeline-step">
+        <time class="cell timeline-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d.%-m.%Y" }}</time>
+        <div class="cell timeline-body">
+          <h3 class="timeline-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | strip_newlines }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+      {%- if app.milestones == nil and app_posts.size == 0 %}
+      <li class="cells timeline-step"><p class="cell timeline-body">Noch keine Updates.</p></li>
+      {%- endif %}
+    </ol>
+  </section>
+
+  {%- if app.legal.datenschutz or app.legal.privacy %}
+  <div class="cells legal-row">
+    <p class="cell annotation">( Datenschutz )</p>
+    {%- if app.legal.datenschutz %}<a class="cell" href="{{ app.legal.datenschutz }}">Datenschutzerklärung</a>{% endif %}
+    {%- if app.legal.privacy %}<a class="cell" href="{{ app.legal.privacy }}" hreflang="en">Privacy policy (English)</a>{% endif %}
+  </div>
+  {%- endif %}
+</article>
+<script src="{{ '/assets/how.js' | relative_url }}" defer></script>
