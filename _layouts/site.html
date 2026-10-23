@@ -4,7 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <meta name="description" content="{{ page.description | default: site.description }}" />
+    {%- comment -%}
+      The description, the canonical address, and what a shared link shows
+      (Open Graph). jekyll-seo-tag writes them from the page. Not the title:
+      on the home page it would add the description, and the tab says only
+      the name.
+    {%- endcomment %}
+    {% seo title=false %}
     <meta name="theme-color" content="#1d1a2b" />
     <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="48x48" />
     <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml" />

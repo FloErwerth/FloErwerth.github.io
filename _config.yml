@@ -2,6 +2,7 @@ title: awesomeapps
 description: Kleine Apps von Florian Erwerth, alle an einem Ort.
 url: https://awesomeapps.fun
 lang: de
+locale: de_DE
 
 # The address is printed in the Impressum and in every privacy policy. It lives
 # here once, so a move is one edit and not a hunt through every document.
@@ -18,6 +19,8 @@ permalink: /updates/:title/
 
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 feed:
   path: feed.xml
@@ -36,6 +39,11 @@ exclude:
   - scripts
 
 defaults:
+  # The picture a shared link shows, in WhatsApp, LinkedIn and the like.
+  - scope:
+      path: ""
+    values:
+      image: /assets/og.png
   - scope:
       type: posts
     values:
