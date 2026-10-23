@@ -113,10 +113,10 @@
   how:
     - title: Berechnung der Kalorien
       text: >-
-        Im Onboarding (noch nicht fertig) werden die Kalorien berechnet, aus
-        den üblichen Fragen nach dem Körpergewicht, der Größe, dem Alter und
-        dem biologischen Geschlecht. Dazu kommen noch das Level der
-        Alltagsbewegung und wie viel Sport man treibt. Anschließend kommt die
+        Im Onboarding (noch nicht fertig) werden die Kalorien aus den üblichen
+        Fragen nach dem Körpergewicht, der Größe, dem Alter und dem
+        biologischen Geschlecht berechnet. Dazu kommen noch das Level der
+        Alltagsbewegung und wie viel Sport du treibst. Anschließend kommt die
         Frage nach dem Ziel. Daraus berechnet Grammgenau dein Tagesziel. Das
         ist die Basis für alles.
       media:
